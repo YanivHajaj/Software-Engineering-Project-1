@@ -63,7 +63,7 @@ public class Phonebook {
 		phonebook.add(contact2);
 				
 		Contact contact3 = new Contact();
-		contact3.SetName("avraham");
+		contact3.SetName("ilya");
 		contact3.SetNumber("333-1234");
 		phonebook.add(contact3);
 		
