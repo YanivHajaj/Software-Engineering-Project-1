@@ -1,3 +1,8 @@
+<<<<<<< Updated upstream
+=======
+//package pack1;
+//GROUP 13: SAMY, SHAIEL, YANIV, ILYA, ORI, TOMER
+>>>>>>> Stashed changes
 public class Contact{
 	private String name;
 	private String number;
