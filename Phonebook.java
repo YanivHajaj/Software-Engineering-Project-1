@@ -58,10 +58,10 @@ public class Phonebook {
 		phonebook.add(contact1);
 		
 		Contact contact2 = new Contact();
-		contact2.SetName("david");
+		contact2.SetName("samy");
 		contact2.SetNumber("222-5678");
 		phonebook.add(contact2);
-		
+				
 		Contact contact3 = new Contact();
 		contact3.SetName("avraham");
 		contact3.SetNumber("333-1234");
