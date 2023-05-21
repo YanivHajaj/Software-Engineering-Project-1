@@ -1,4 +1,3 @@
-//package pack1;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner; //to get input from user
