@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class PrivateChat 
 {
@@ -23,9 +24,20 @@ public class PrivateChat
 		this._chat.add(new Message(message, initator));
 	}
 	
+	public String getContact()
+	{
+		return this._contact.GetName();
+	}
+	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		String str = "Contact: ";
+		str += this.getContact() + "\n";
+		
+		for (Iterator iterator = _chat.iterator(); iterator.hasNext();) 
+		{
+			str += iterator.next().toString();
+		}
+		return str;
 	}
 }

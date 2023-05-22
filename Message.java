@@ -16,9 +16,20 @@ public class Message
 		this._message = message;
 		this._initiator = initiator;
 	}
+	
+	
 	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+	public String toString() 
+	{
+		String str = "";
+		if (this._initiator)
+		{
+			str += "Sent: ";
+		}
+		else
+		{
+			str += "Received: ";
+		}
+		return str + this._message + "\n";
 	}
 }
