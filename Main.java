@@ -4,10 +4,7 @@ import java.util.Scanner; //to get input from user
 //GROUP 13: SAMY, SHAIEL, YANIV, ILYA, ORI, TOMER
 
 public class Main {
-	
-
-	static Scanner input = new Scanner(System.in); //Create a Scanner object
-	public static void main(String[] args) {
+		public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		ArrayList<Contact> phonebook = new ArrayList<Contact>();
 		 
@@ -79,8 +76,9 @@ public class Main {
 				System.out.println("Unavialable");
 				break;
 			}
-			main_sms(phonebook);
+			//main_sms(phonebook);
 		}
+		input.close();
 	}
 	
 	
@@ -111,7 +109,8 @@ public class Main {
     	
     	ArrayList<PrivateChat> all_chats = new ArrayList<PrivateChat>();
     	boolean exit = false;
-    	while (!exit) {
+    	while (!exit) 
+    	{
     		System.out.println("Type the number of one of the following instructions to excute it:");
     		System.out.println("1) Adding another chat with a person from your contacts");
     		System.out.println("2) Delete all chat messages with a specific person.");
@@ -144,6 +143,8 @@ public class Main {
 //    		default:
 //    			System.out.println("Unavialable");
 //    			break;
-	}
-	}
-}
+    	}
+    	input.close();
+    	
+	} // end of main_sms function
+} // end of Main class

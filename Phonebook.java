@@ -5,6 +5,7 @@ import java.util.Scanner; //to get input from user
 //GROUP 13: SAMY, SHAIEL, YANIV, ILYA, ORI, TOMER
 
 public class Phonebook {
+	static Scanner input = new Scanner(System.in); //Create a Scanner object
 	
 	//easier to check (similar to 1 but add from main)
 	public static void addContactFromMain(ArrayList<Contact> phonebook, String name, String number) {
@@ -109,82 +110,6 @@ public class Phonebook {
 		
 	
 	
-	static Scanner input = new Scanner(System.in); //Create a Scanner object
-	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		ArrayList<Contact> phonebook = new ArrayList<Contact>();
-		 
-		boolean exit = false;
-
-		
-		// add some contacts to the phonebook (can be deleted)
-		addContactFromMain(phonebook, "moahe", "1111234");
-		addContactFromMain(phonebook, "david", "2225678");
-		addContactFromMain(phonebook, "shlomo", "4443333");
-		addContactFromMain(phonebook, "avraham", "3331234");
-		addContactFromMain(phonebook, "shlomo", "4441111");
-		addContactFromMain(phonebook, "shlomo", "4442222");
-		addContactFromMain(phonebook, "shlomo", "4443333");
-		addContactFromMain(phonebook, "shlomo", "4443333"); 
-		addContactFromMain(phonebook, "shlomo", "4443333");
-		
-		while (!exit) {
-			System.out.println("Type the number of one of the following instructions to excute it:");
-			System.out.println("1) Add contact");
-			System.out.println("2) Delete contact");
-			System.out.println("3) Display all contacts");
-			System.out.println("4) Search contact by name (return ArrayList that contains the occurrences)");
-			System.out.println("5) Sort all contacts by name");
-			System.out.println("6) Sort all contacts by number");
-			System.out.println("7) Delete duplicates");
-			System.out.println("8) Reverse the order of the phonebook");
-			System.out.println("9) Save phonebook as a text file");
-			System.out.println("10) Load contacts from a text file");
-			System.out.println("11) Exit the program");
-			String Num = input.next();
-			switch (Num) {
-			case "1":
-				addContactFromUser(phonebook);
-				break;
-			case "2":	
-				DeleteContact(phonebook);
-				break;
-			case "3":
-				printAllContact(phonebook);
-				break;
-			case "4":
-				findNameOccurrences(phonebook);	
-				break;
-			case "5":
-				sortListByName(phonebook);
-				break;
-			case "6":
-				sortListByNumber(phonebook);
-				break;
-			case "7":
-				deleteDuplicatenew(phonebook);
-				break;
-			case "8":
-				reverseOrder(phonebook);
-				System.out.println("The order was reversed.");
-				break;
-			case "9":
-				saveToTextFile(phonebook);
-				break;
-			case "10":
-				addFromFile(phonebook);
-				break;
-			case "11":
-				System.out.println("Exiting. We will not take a new input");
-				exit= true;
-				break;
-			default:
-				System.out.println("Unavialable");
-				break;
-			}
-			Main.main_sms(phonebook);
-		}
-	}
 	
 	//reverse the order (8)
 	public static void reverseOrder(ArrayList<Contact> phonebook) {   
