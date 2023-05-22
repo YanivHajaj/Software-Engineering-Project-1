@@ -166,6 +166,7 @@ public class Phonebook {
 				System.out.println("Unavialable");
 				break;
 			}
+			Main_SMS.main_sms();
 		}
 	}
 	

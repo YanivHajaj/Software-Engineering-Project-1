@@ -6,13 +6,16 @@ public class Contact{
 	
 	
 	
-	
+	// Constructors
 	Contact(String name, String number)
 	{
 		this._name = name;
 		this._number = number;
 	}
-	
+	Contact()
+	{
+		this(null, null);
+	}
 	
 	
 	public void SetName(String name){this._name=name;}
