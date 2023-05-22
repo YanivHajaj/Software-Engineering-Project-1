@@ -1,4 +1,4 @@
-package pack1;
+//package pack1;
 //GROUP 13: SAMY, SHAIEL, YANIV, ILYA, ORI, TOMER
 public class Contact{
 	private String name;
