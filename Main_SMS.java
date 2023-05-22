@@ -18,7 +18,7 @@ public class Main_SMS {
 		//debug tests
 		Scanner input = new Scanner(System.in); //Create a Scanner object
 
-		Contact tomer = new Contact("Tomer", "0585896777");
+		Contact tomer = new Contact("Tomer", "0555555557");
 		PrivateChat chat1 = new PrivateChat(tomer);
 		chat1.addMessage(new Message("Hello Wrold", Message.SENT)); 
 		chat1.addMessage("Hello Mars", Message.RECEIVED);
