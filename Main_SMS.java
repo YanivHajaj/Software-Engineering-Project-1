@@ -4,7 +4,7 @@ import java.util.Scanner; //to get input from user
 //GROUP 13: SAMY, SHAIEL, YANIV, ILYA, ORI, TOMER
 
 public class Main_SMS {
-	public static void main_sms() { // needs to receive Phonebook
+	public static void main_sms(Phonebook phonebook) { // needs to receive Phonebook
 		
 		// add switch case for options:
 		
@@ -18,11 +18,11 @@ public class Main_SMS {
 		//debug tests
 		Scanner input = new Scanner(System.in); //Create a Scanner object
 
-		Contact samy = new Contact("Samy", "0585896777");
-		PrivateChat chat1 = new PrivateChat(samy);
+		Contact tomer = new Contact("Tomer", "0585896777");
+		PrivateChat chat1 = new PrivateChat(tomer);
 		chat1.addMessage(new Message("Hello Wrold", Message.SENT)); 
 		chat1.addMessage("Hello Mars", Message.RECEIVED);
-    	System.out.println("Send a message to: " + chat1.getContact()); 
+    	System.out.println(chat1.getContact() + " send a message to User : "); 
 		chat1.addMessage(input.nextLine(), Message.RECEIVED);
     	System.out.println(chat1); 
     	
@@ -40,29 +40,29 @@ public class Main_SMS {
     		System.out.println("6) Exit the SMS program");
     		String Num = input.next();
     		
-    		switch (Num) {
-    		case "1":
-        		System.out.println("Enter the contact name:");
-        		String name = input.nextLine();
-    			//all_chats.add(new PrivateChat(Phonebook.getContact(name))
-    			break;
-    		case "2":	
-    			deleteChat(allChats);
-    			break;
-    		case "3":
-    			displayChat(allChats);
-    			break;
-    		case "4":
-    			findSentence(allChats);	
-    			break;
-    		case "5":
-    			displayAllChats(allChats);
-    			System.out.println("Exiting. We will not take a new input");
-    			exit= true;
-    			break;
-    		default:
-    			System.out.println("Unavialable");
-    			break;
-	
+//    		switch (Num) {
+//    		case "1":
+//        		System.out.println("Enter the contact name:");
+//        		String name = input.nextLine();
+//    			//all_chats.add(new PrivateChat(Phonebook.getContact(name))
+//    			break;
+//    		case "2":	
+//    			deleteChat(allChats);
+//    			break;
+//    		case "3":
+//    			displayChat(allChats);
+//    			break;
+//    		case "4":
+//    			findSentence(allChats);	
+//    			break;
+//    		case "5":
+//    			displayAllChats(allChats);
+//    			System.out.println("Exiting. We will not take a new input");
+//    			exit= true;
+//    			break;
+//    		default:
+//    			System.out.println("Unavialable");
+//    			break;
+	}
 	}
 }

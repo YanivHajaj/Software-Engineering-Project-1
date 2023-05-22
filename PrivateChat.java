@@ -13,6 +13,7 @@ public class PrivateChat
 		this._contact = contact;
 		this._chat = new ArrayList<Message>();
 	}
+	
 	public void addMessage(Message message)
 	{
 		this._chat.add(message);
@@ -30,7 +31,7 @@ public class PrivateChat
 	}
 	
 	@Override
-	public String toString() {
+	public String toString() { // prints all the message from the contact
 		String str = "Contact: ";
 		str += this.getContact() + "\n";
 		
