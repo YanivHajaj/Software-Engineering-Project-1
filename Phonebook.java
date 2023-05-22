@@ -71,6 +71,22 @@ public class Phonebook {
 	    return AllOccurrences;
 	}
 	
+	//find contact by name
+	public static Contact findContact(ArrayList<Contact> phonebook, String name) 
+	{
+	    //ArrayList<Contact> AllOccurrences = new ArrayList<Contact>();
+	    //System.out.print("Enter a name to search:  ");
+	    //String name = input.nextLine();  
+	    for (Contact contact : phonebook) 
+	    {
+	        if (contact.GetName().equals(name)) 
+	        {
+	        	return contact;
+	        }
+	    }
+	    return null;
+	}
+	
 	
 	//delete duplicates (7)
 	//if there is more than one copy leave only one
@@ -166,7 +182,7 @@ public class Phonebook {
 				System.out.println("Unavialable");
 				break;
 			}
-			Main_SMS.main_sms();
+			Main.main_sms(phonebook);
 		}
 	}
 	
