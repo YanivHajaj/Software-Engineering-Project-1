@@ -280,7 +280,6 @@ public class Main {
 			}
 			
 			//New chat 
-			//if (all_chats.contains(my_contact)== false)
 			if (my_contact.has_chat_get() == false)
 			{
 				my_contact.contact_new_chat();
