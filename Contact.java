@@ -3,6 +3,7 @@
 public class Contact{
 	private String _name;
 	private String _number;
+	private boolean _has_chat;
 	
 	
 	
@@ -11,6 +12,7 @@ public class Contact{
 	{
 		this._name = name;
 		this._number = number;
+		this._has_chat = false;
 	}
 	Contact()
 	{
@@ -32,5 +34,8 @@ public class Contact{
 	public String GetNumber(){return _number;};
 	public Contact Get(){return this;};
 	public void PrintContact(){System.out.println(_name + ": " + _number);}
+	public boolean has_chat_get() {return _has_chat;}
+	public void contact_new_chat() {this._has_chat = true;}
+	public void contact_delete_chat() {this._has_chat = false;}
 
 }
