@@ -7,7 +7,7 @@ public class Main {
 
 	// Init App
 	static Scanner input = new Scanner(System.in); //Create a Scanner object
-	static ArrayList<PrivateChat> all_chats;
+	static ArrayList<PrivateChat> all_chats = new ArrayList<PrivateChat>();
 	static ArrayList<Contact> phonebook = new ArrayList<Contact>();
 	static MediaApp m1 = new MediaApp();
 	static boolean exit_loop = false;
@@ -45,6 +45,8 @@ public class Main {
 				{
 					main_phonebook(phonebook);
 				}
+				exit_loop = false;
+				input.nextLine();
 				break;
 				
 			case "2":	
@@ -52,6 +54,7 @@ public class Main {
 				{
 					main_sms(phonebook, all_chats);
 				}
+				exit_loop = false;
 				break;
 				
 			case "3":
@@ -80,6 +83,7 @@ public class Main {
 						System.out.println("Unavialable");
 						break;
 				}
+				break;
 			}
 				
 			case "4":
@@ -188,7 +192,7 @@ public class Main {
 				break;
 			case "11":
 				System.out.println("Going back to main App");
-				exit_loop= true;
+				exit_loop = true;
 				return;
 			default:
 				System.out.println("Unavialable");
@@ -200,6 +204,13 @@ public class Main {
 	
 	public static void main_sms(ArrayList<Contact> phonebook, ArrayList<PrivateChat> all_chats) 
 	{
+		// SMS Init
+		PrivateChat chat = new PrivateChat(null);
+		String contact_name = new String();
+		String curr_message = new String();
+		Contact my_contact = new Contact();
+		String choice = new String();
+		
 		System.out.println("SMS:");
 		System.out.println("Type the number of one of the following instructions to excute it:");
 		System.out.println("1) Send SMS to contact");
@@ -210,16 +221,14 @@ public class Main {
 		System.out.println("6) Display all chat messanges");
 		System.out.println("7) Back to main menu)");
 		
-		// SMS Init
-		PrivateChat chat = null;
-		String contact_name = null;
-		Contact my_contact = null;
 		
-		String Num1 = input.next();
-		switch (Num1) {
+		choice = input.nextLine();
+		switch (choice) 
+		{
 		case "1": // Send SMS to contact
 			System.out.println("Type contact name: ");
-			contact_name = input.next();
+			contact_name = input.nextLine();
+			
 			my_contact = Phonebook.findContact(phonebook, contact_name);
 			
 			//Contact doesnt exist
@@ -237,7 +246,8 @@ public class Main {
 				System.out.println("New Private Chat with " + my_contact.GetName());
 				PrivateChat new_chat = new PrivateChat(my_contact);
 				System.out.println("Send message to " + my_contact.GetName());
-				new_chat.addMessage(input.nextLine(), Message.SENT);
+				curr_message = input.nextLine();
+				new_chat.addMessage(curr_message, Message.SENT);
 				all_chats.add(new_chat);
 				break;
 			}
@@ -252,13 +262,14 @@ public class Main {
 				}
 			}
 			System.out.println("New Message to " + my_contact.GetName());
-			chat.addMessage(input.nextLine(), Message.SENT);
+			curr_message = input.nextLine();
+			chat.addMessage(curr_message, Message.SENT);
 			break;
 		
 			
 		case "2": // Receive SMS from contact
 			System.out.println("Type contact name: ");
-			contact_name = input.next();
+			contact_name = input.nextLine();
 			my_contact = Phonebook.findContact(phonebook, contact_name);
 			
 			//Contact doesnt exist
@@ -276,7 +287,8 @@ public class Main {
 				System.out.println("New Private Chat with " + my_contact.GetName());
 				PrivateChat new_chat = new PrivateChat(my_contact);
 				System.out.println(my_contact.GetName() + ", send message to user");
-				new_chat.addMessage(input.nextLine(), Message.RECEIVED);
+				curr_message = input.nextLine();
+				new_chat.addMessage(curr_message, Message.RECEIVED);
 				all_chats.add(new_chat);
 				break;
 			}
@@ -291,13 +303,14 @@ public class Main {
 				}
 			}
 			System.out.println(my_contact.GetName() + ", New Message to user");
-			chat.addMessage(input.nextLine(), Message.RECEIVED);
+			curr_message = input.nextLine();
+			chat.addMessage(curr_message, Message.RECEIVED);
 			break;
 			
 			
 		case "3": // Delete chat with contact
 			System.out.println("Type contact name: ");
-			contact_name = input.next();
+			contact_name = input.nextLine();
 			my_contact = Phonebook.findContact(phonebook, contact_name);
 			
 			//Contact doesnt exist
@@ -331,7 +344,7 @@ public class Main {
 			
 		case "4": // Display all messages with specific contact
 			System.out.println("Type contact name: ");
-			contact_name = input.next();
+			contact_name = input.nextLine();
 			my_contact = Phonebook.findContact(phonebook, contact_name);
 			
 			//Contact doesnt exist
@@ -363,102 +376,14 @@ public class Main {
 			
 		case "7":
 			System.out.println("Going back to main App");
-			exit_loop= true;
+			exit_loop = true;
 			return;
 			
 		default:
-			System.out.println("Unavialable");
+			System.out.println("Unavailable");
 			break;
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		// add switch case for options:
-		
-			// if user is admin -> can access all functionalities
-		
-			// else if user has its contact -> can send messages to user 
-		
-			// else -> exit
-		
-		
-		//debug tests
-//		Scanner input = new Scanner(System.in); //Create a Scanner object
-//
-//		Contact tomer = new Contact("Tomer", "0555555557");
-//		PrivateChat chat1 = new PrivateChat(tomer);
-//		chat1.addMessage(new Message("Hello Wrold", Message.SENT)); 
-//		chat1.addMessage("Hello Mars", Message.RECEIVED);
-//    	System.out.println(chat1.getContact() + " send a message to User : "); 
-//		chat1.addMessage(input.nextLine(), Message.RECEIVED);
-//    	System.out.println(chat1); 
-//    	
-//    	
-//       	boolean exit = false;
-//    	while (!exit) 
-//    	{
-//    		System.out.println("Type the number of one of the following instructions to excute it:");
-//    		System.out.println("1) Adding another chat with a person from your contacts");
-//    		System.out.println("2) Delete all chat messages with a specific person.");
-//    		System.out.println("3) Display all contacts");
-//    		System.out.println("4) Find all messages with a certein sentence");
-//    		System.out.println("5) Print messages from all chats");
-//    		System.out.println("6) Exit the SMS program");
-//    		String Num = input.next();
-//    		
-//    		switch (Num) {
-//    		case "1":
-//        		System.out.println("Enter the contact name:");
-//        		String name = input.nextLine();
-//    			//all_chats.add(new PrivateChat(Phonebook.getContact(name))
-//    			break;
-//    		case "2":	
-//    			deleteChat(allChats);
-//    			break;
-//    		case "3":
-//    			displayChat(allChats);
-//    			break;
-//    		case "4":
-//    			findSentence(allChats);	
-//    			break;
-//    		case "5":
-//    			displayAllChats(allChats);
-//    			System.out.println("Exiting. We will not take a new input");
-//    			exit= true;
-//    			break;
-//    		default:
-//    			System.out.println("Unavialable");
-//    			break;
-//    	}
-    	
     	
 	} // end of main_sms function
+	
 } // end of Main class
