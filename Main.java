@@ -64,9 +64,10 @@ public class Main {
 				
 			case "3":
 				input.nextLine(); // clean input buffer
-				while (false) 
+				while (!exit_loop) 
 				{
 					//main_calendar(my_phonebook.phonebook, my_diary);
+					exit_loop = true;
 				}
 				exit_loop = false;
 			case "4":
