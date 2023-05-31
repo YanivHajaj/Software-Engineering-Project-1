@@ -18,6 +18,7 @@ public class Main {
 		boolean exit = false;
 
 		// add some contacts to the phonebook (can be deleted)
+
 		Phonebook.addContactFromMain(phonebook, "hello", "1111234");
 		Phonebook.addContactFromMain(phonebook, "david", "2225678");
 		Phonebook.addContactFromMain(phonebook, "shlomo", "4443333");
