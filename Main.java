@@ -3,14 +3,16 @@ import java.util.ArrayList;
 import java.util.Scanner; //to get input from user
 //GROUP 13: SAMY, SHAIEL, YANIV, ILYA, ORI, TOMER
 
+
+
 public class Main {
 
-	// Init App
+	// Init Apps
 	static Scanner input = new Scanner(System.in); //Create a Scanner object
-	static ArrayList<PrivateChat> all_chats = new ArrayList<PrivateChat>();
-	static ArrayList<Contact> phonebook = new ArrayList<Contact>();
+	static Phonebook my_phonebook = new Phonebook();
 	static MediaApp m1 = new MediaApp();
 	static boolean exit_loop = false;
+	static SMSApp chats = new SMSApp();
 	
 	
 	public static void main (String[] args) {
@@ -18,15 +20,15 @@ public class Main {
 		boolean exit = false;
 
 		// add some contacts to the phonebook (can be deleted)
-		Phonebook.addContactFromMain(phonebook, "moahe", "1111234");
-		Phonebook.addContactFromMain(phonebook, "david", "2225678");
-		Phonebook.addContactFromMain(phonebook, "shlomo", "4443333");
-		Phonebook.addContactFromMain(phonebook, "avraham", "3331234");
-		Phonebook.addContactFromMain(phonebook, "shlomo", "4441111");
-		Phonebook.addContactFromMain(phonebook, "shlomo", "4442222");
-		Phonebook.addContactFromMain(phonebook, "shlomo", "4443333");
-		Phonebook.addContactFromMain(phonebook, "shlomo", "4443333"); 
-		Phonebook.addContactFromMain(phonebook, "shlomo", "4443333");
+		Phonebook.addContactFromMain(my_phonebook.phonebook, "moahe", "1111234");
+		Phonebook.addContactFromMain(my_phonebook.phonebook, "david", "2225678");
+		Phonebook.addContactFromMain(my_phonebook.phonebook, "shlomo", "4443333");
+		Phonebook.addContactFromMain(my_phonebook.phonebook, "avraham", "3331234");
+		Phonebook.addContactFromMain(my_phonebook.phonebook, "shlomo", "4441111");
+		Phonebook.addContactFromMain(my_phonebook.phonebook, "shlomo", "4442222");
+		Phonebook.addContactFromMain(my_phonebook.phonebook, "shlomo", "4443333");
+		Phonebook.addContactFromMain(my_phonebook.phonebook, "shlomo", "4443333"); 
+		Phonebook.addContactFromMain(my_phonebook.phonebook, "shlomo", "4443333");
 
 		
 		while (!exit) {
@@ -41,18 +43,19 @@ public class Main {
 			String Num = input.next();
 			switch (Num) {
 			case "1":
+				input.nextLine();
 				while (!exit_loop) 
 				{
-					main_phonebook(phonebook);
+					main_phonebook(my_phonebook.phonebook);
 				}
 				exit_loop = false;
-				input.nextLine();
 				break;
 				
-			case "2":	
+			case "2":
+				input.nextLine();
 				while (!exit_loop) 
 				{
-					main_sms(phonebook, all_chats);
+					main_sms(my_phonebook.phonebook, chats.all_chats);
 				}
 				exit_loop = false;
 				break;
@@ -72,7 +75,7 @@ public class Main {
 					String Num1 = input.next();
 					switch (Num1) {
 					case "1":
-						Phonebook.addContactFromUser(phonebook);
+						Phonebook.addContactFromUser(my_phonebook.phonebook);
 						break;
 					
 					case "7":
@@ -205,6 +208,7 @@ public class Main {
 	public static void main_sms(ArrayList<Contact> phonebook, ArrayList<PrivateChat> all_chats) 
 	{
 		// SMS Init
+		
 		PrivateChat chat = new PrivateChat(null);
 		String contact_name = new String();
 		String curr_message = new String();

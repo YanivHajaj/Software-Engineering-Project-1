@@ -7,6 +7,13 @@ import java.util.Scanner; //to get input from user
 public class Phonebook {
 	static Scanner input = new Scanner(System.in); //Create a Scanner object
 	
+	ArrayList<Contact> phonebook;
+	
+	public Phonebook() 
+	{
+		phonebook = new ArrayList<Contact>();
+	}
+	
 	//easier to check (similar to 1 but add from main)
 	public static void addContactFromMain(ArrayList<Contact> phonebook, String name, String number) {
 	    Contact newContact = new Contact();
