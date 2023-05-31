@@ -1,6 +1,6 @@
 //package pack1;
 //GROUP 13: SAMY, SHAIEL, YANIV, ILYA, ORI, TOMER
-public class Contact{
+public class Contact implements Comparable<Contact>{
 	private String _name;
 	private String _number;
 	private boolean _has_chat;
@@ -37,5 +37,10 @@ public class Contact{
 	public boolean has_chat_get() {return _has_chat;}
 	public void contact_new_chat() {this._has_chat = true;}
 	public void contact_delete_chat() {this._has_chat = false;}
-
+	
+	@Override
+	public int compareTo(Contact o) {
+		return this.GetName().toLowerCase().compareTo(o.GetName().toLowerCase());
+	}
+	
 }

@@ -60,7 +60,7 @@ public class Diary {
 			System.out.println("Write name of meeting contact:");
 			String name= s.next();
 			
-			Contact contact = phonebook.findContact(name);//new Contact();		
+			Contact contact = Phonebook.findContact(phonebook.phonebook ,name);//new Contact();		
 			//scan date
 			System.out.println("Write day of new meeting (between 1-30):");
 			int day= s.nextInt();
@@ -193,7 +193,7 @@ public class Diary {
 			Scanner s = new Scanner(System.in);
 			System.out.println("Write name of meeting contact:");
 			String name= s.next();
-			Contact contact = phonebook.findContact(name);//we found the contact (if exists)
+			Contact contact = Phonebook.findContact(phonebook.phonebook, name);//we found the contact (if exists)
 			//search contact in diary:
 			if(contact != null) {
 				int flag1=0; //assume it wasn't found 

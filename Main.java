@@ -1,5 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner; //to get input from user
 //GROUP 13: SAMY, SHAIEL, YANIV, ILYA, ORI, TOMER
 
@@ -156,7 +158,8 @@ public class Main {
 				Phonebook.findNameOccurrences(phonebook);	
 				break;
 			case "5":
-				Phonebook.sortListByName(phonebook);
+				//Phonebook.sortListByName(phonebook);
+				Collections.sort(phonebook);
 				break;
 			case "6":
 				Phonebook.sortListByNumber(phonebook);
