@@ -84,7 +84,7 @@ public class Main {
 						exitPhonebook= true;
 						break;
 					default:
-						System.out.println("Unavialable");
+						System.out.println("Invalid input");
 						break;
 				}
 				break;
@@ -120,7 +120,7 @@ public class Main {
 						break;
 						//continue;
 					default:
-						System.out.println("Unavialable");
+						System.out.println("Invalid input");
 						break;
 					}
 					
@@ -137,7 +137,7 @@ public class Main {
 				break;
 					
 			default:
-				System.out.println("Unavialable");
+				System.out.println("Invalid input");
 			//	break;
 
 
@@ -199,7 +199,7 @@ public class Main {
 				exit_loop = true;
 				return;
 			default:
-				System.out.println("Unavialable");
+				System.out.println("Invalid input");
 				break;
 			}
 		}
@@ -250,7 +250,7 @@ public class Main {
 				my_contact.contact_new_chat();
 				System.out.println("New Private Chat with " + my_contact.GetName());
 				PrivateChat new_chat = new PrivateChat(my_contact);
-				System.out.println("Send message to " + my_contact.GetName());
+				System.out.println("New Message to " + my_contact.GetName());
 				curr_message = input.nextLine();
 				new_chat.addMessage(curr_message, Message.SENT);
 				all_chats.add(new_chat);
@@ -290,7 +290,7 @@ public class Main {
 				my_contact.contact_new_chat();
 				System.out.println("New Private Chat with " + my_contact.GetName());
 				PrivateChat new_chat = new PrivateChat(my_contact);
-				System.out.println(my_contact.GetName() + ", send message to user");
+				System.out.println(my_contact.GetName() + ", send new message to user");
 				curr_message = input.nextLine();
 				new_chat.addMessage(curr_message, Message.RECEIVED);
 				all_chats.add(new_chat);
@@ -306,7 +306,7 @@ public class Main {
 					break;
 				}
 			}
-			System.out.println(my_contact.GetName() + ", New Message to user");
+			System.out.println(my_contact.GetName() + ", send new message to user");
 			curr_message = input.nextLine();
 			chat.addMessage(curr_message, Message.RECEIVED);
 			break;
@@ -340,7 +340,7 @@ public class Main {
 					break;
 				}
 			}
-			System.out.println("Deleting Private Char with " + my_contact.GetName());
+			System.out.println("Deleting Private Chat with " + my_contact.GetName());
 			my_contact.contact_delete_chat();
 			all_chats.remove(chat);
 			break;
@@ -361,7 +361,7 @@ public class Main {
 			//New chat 
 			if (my_contact.has_chat_get() == false)
 			{
-				System.out.println("No available Private Chat with " + my_contact.GetName());
+				System.out.println("No Private Chat with " + my_contact.GetName());
 				break;
 			}
 			
@@ -383,7 +383,7 @@ public class Main {
 			return;
 			
 		default:
-			System.out.println("Unavailable");
+			System.out.println("Invalid input");
 			break;
 		}
     	
