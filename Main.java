@@ -6,13 +6,14 @@ import java.util.Scanner; //to get input from user
 
 
 public class Main {
+	
+	static Scanner input = new Scanner(System.in); //Create a Scanner object
+	static boolean exit_loop = false;	// Create exit flag
 
 	// Init Apps
-	static Scanner input = new Scanner(System.in); //Create a Scanner object
-	static Phonebook my_phonebook = new Phonebook();
-	static MediaApp m1 = new MediaApp();
-	static boolean exit_loop = false;
-	static SMSApp chats = new SMSApp();
+	static Phonebook my_phonebook = new Phonebook(); // Init phonebook
+	static MediaApp m1 = new MediaApp(); // Init MediaApp
+	static SMSApp chats = new SMSApp(); // Init SMSApp
 	
 	
 	public static void main (String[] args) {
@@ -43,7 +44,7 @@ public class Main {
 			String Num = input.next();
 			switch (Num) {
 			case "1":
-				input.nextLine();
+				input.nextLine(); // clean input buffer
 				while (!exit_loop) 
 				{
 					main_phonebook(my_phonebook.phonebook);
@@ -52,7 +53,7 @@ public class Main {
 				break;
 				
 			case "2":
-				input.nextLine();
+				input.nextLine(); // clean input buffer
 				while (!exit_loop) 
 				{
 					main_sms(my_phonebook.phonebook, chats.all_chats);
@@ -358,7 +359,6 @@ public class Main {
 			}
 			
 			//New chat 
-			//if (all_chats.contains(my_contact)== false)
 			if (my_contact.has_chat_get() == false)
 			{
 				System.out.println("No available Private Chat with " + my_contact.GetName());
@@ -368,7 +368,7 @@ public class Main {
 			//Existing chat
 			for (PrivateChat curr_privateChat : all_chats) 
 			{
-				if (curr_privateChat.getContact().equals(contact_name))
+				if (curr_privateChat.getContact().equals(my_contact.GetName()))
 				{
 					chat = curr_privateChat;
 					break;
