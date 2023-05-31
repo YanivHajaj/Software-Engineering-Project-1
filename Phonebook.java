@@ -87,7 +87,7 @@ public class Phonebook {
 	    //String name = input.nextLine();  
 	    for (Contact contact : phonebook) 
 	    {
-	        if (contact.GetName().equals(name)) 
+	        if (contact.GetName().toLowerCase().equals(name.toLowerCase())) 
 	        {
 	        	return contact;
 	        }
@@ -142,7 +142,7 @@ public class Phonebook {
 		//using bubble sort
 		for (int i = 0; i<n; i++) {//overall n loops
 			for (int j=1; j<(n-i); j++) { //in each loop going n-i-1 checks
-				 if (phonebook.get(j-1).GetName().compareTo(phonebook.get(j).GetName()) > 0) {
+				 if (phonebook.get(j-1).GetName().toLowerCase().compareTo(phonebook.get(j).GetName().toLowerCase()) > 0) {
 					 //if the element to the left is bigger than the element to the right switch them
 					 temp = phonebook.get(j-1);
 					 phonebook.set((j-1),phonebook.get(j));

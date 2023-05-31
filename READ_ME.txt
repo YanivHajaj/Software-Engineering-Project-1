@@ -1,3 +1,5 @@
+//GROUP 13: SAMY, SHAIEL, YANIV, ILYA, ORI, TOMER
+
 READ ME:
 
 	This project makes some apps for a simple phone:
