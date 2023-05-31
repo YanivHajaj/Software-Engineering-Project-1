@@ -13,8 +13,9 @@ import java.time.ZoneId;
 
 
 public class Diary {
-	private ArrayList<Day> diary;
-	private Date startDate;
+	//can be 3 events in date 3/27 at 14:00 16:00 23:00 they will be at diary one after the other as three day
+	private ArrayList<Day> diary; 
+	private Date startDate;//the start of the month (august, september...)
 	
 	public Diary() {//default constructor
 		diary = new ArrayList<Day>(); //creation of arrayList: DiaryBook
@@ -58,7 +59,8 @@ public class Diary {
 			Scanner s = new Scanner(System.in);
 			System.out.println("Write name of meeting contact:");
 			String name= s.next();
-			Contact contact = phonebook.getContact( name);//new Contact();		
+			
+			Contact contact = phonebook.findContact(name);//new Contact();		
 			//scan date
 			System.out.println("Write day of new meeting (between 1-30):");
 			int day= s.nextInt();
@@ -191,7 +193,7 @@ public class Diary {
 			Scanner s = new Scanner(System.in);
 			System.out.println("Write name of meeting contact:");
 			String name= s.next();
-			Contact contact = phonebook.getContact(name);//we found the contact (if exists)
+			Contact contact = phonebook.findContact(name);//we found the contact (if exists)
 			//search contact in diary:
 			if(contact != null) {
 				int flag1=0; //assume it wasn't found 
@@ -253,7 +255,7 @@ public class Diary {
 				for (int i=0; i<diary.size(); i++) { // a loop to find the contact
 					if(diary.get(i) instanceof Meeting) {
 						Meeting m = (Meeting)diary.get(i);
-						String s = m.getContact().getName();
+						String s = m.getContact().GetName();
 						if(s.equals(contact)) {
 							diary.remove(diary.get(i));	//remove;
 							i = i-1;

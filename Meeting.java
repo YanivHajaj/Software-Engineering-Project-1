@@ -2,7 +2,7 @@
 import java.util.Date;
 //inherits from day
 public class Meeting extends Day {
-		private Contact contact;
+		private Contact contact;//the contact i want to meet
 
 		// Constructors
 		public Meeting(Date date, int duration, Contact con) {
@@ -57,7 +57,7 @@ public class Meeting extends Day {
 		public void printDay() {
 			super.printDay();
 			System.out.print("contact:");
-			this.getContact().printContact();
+			this.getContact().PrintContact();
 			
 		}
 		
