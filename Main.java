@@ -14,6 +14,7 @@ public class Main {
 	static Phonebook my_phonebook = new Phonebook(); // Init phonebook
 	static MediaApp m1 = new MediaApp(); // Init MediaApp
 	static SMSApp chats = new SMSApp(); // Init SMSApp
+	// static Diary my_diary = new Diary(); // Init DiaryApp
 	
 	
 	public static void main (String[] args) {
@@ -47,8 +48,8 @@ public class Main {
 				input.nextLine(); // clean input buffer
 				while (!exit_loop) 
 				{
-					main_phonebook(my_phonebook.phonebook);
-				}
+					main_phonebook(my_phonebook.phonebook); // in order to reuse all the previous made functions
+				}											// we need to send an ArrayList and not a Phonebook
 				exit_loop = false;
 				break;
 				
@@ -62,34 +63,12 @@ public class Main {
 				break;
 				
 			case "3":
-				while (!exitPhonebook) {
-
-					System.out.println("Calender:");
-					System.out.println("Type the number of one of the following instructions to excute it:");
-					System.out.println("1) Add an event");
-					System.out.println("2) Delete an event");
-					System.out.println("3) Display all events from a specific date");
-					System.out.println("4) Display all events with a specific contact");
-					System.out.println("5) search if there is overlapping events (delete if there is)");
-					System.out.println("6) Display all events");
-					System.out.println("7) Back to main menu)");
-					String Num1 = input.next();
-					switch (Num1) {
-					case "1":
-						Phonebook.addContactFromUser(my_phonebook.phonebook);
-						break;
-					
-					case "7":
-						System.out.println("Going back to main App");
-						exitPhonebook= true;
-						break;
-					default:
-						System.out.println("Invalid input");
-						break;
+				input.nextLine(); // clean input buffer
+				while (false) 
+				{
+					//main_calendar(my_phonebook.phonebook, my_diary);
 				}
-				break;
-			}
-				
+				exit_loop = false;
 			case "4":
 				while (!exitPhonebook) {
 					
@@ -300,7 +279,7 @@ public class Main {
 			//Existing chat
 			for (PrivateChat curr_privateChat : all_chats) 
 			{
-				if (curr_privateChat.getContact().equals(contact_name))
+				if (curr_privateChat.getContact().equals(my_contact.GetName()))
 				{
 					chat = curr_privateChat;
 					break;
@@ -388,5 +367,35 @@ public class Main {
 		}
     	
 	} // end of main_sms function
+	
+	
+	public static void main_calendar(ArrayList<Contact> phonebook) //, Diary my_diary)
+	{
+		System.out.println("Calender:");
+		System.out.println("Type the number of one of the following instructions to excute it:");
+		System.out.println("1) Add an event");
+		System.out.println("2) Delete an event");
+		System.out.println("3) Display all events from a specific date");
+		System.out.println("4) Display all events with a specific contact");
+		System.out.println("5) search if there is overlapping events (delete if there is)");
+		System.out.println("6) Display all events");
+		System.out.println("7) Back to main menu)");
+		String Num1 = input.next();
+		switch (Num1) 
+		{
+		case "1":
+			Phonebook.addContactFromUser(my_phonebook.phonebook);
+			break;
+		
+		case "7":
+			System.out.println("Going back to main App");
+			exit_loop = true;
+			break;
+		default:
+			System.out.println("Invalid input");
+			break;
+		} // end of switch case
+	}// end of main_calendar
+	
 	
 } // end of Main class

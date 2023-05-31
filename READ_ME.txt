@@ -26,6 +26,7 @@ READ ME:
 	- SMSApp: This is where you can manage your sms app, 
 			  it contains an ArrayList of PrivateChat, 
 			  which contains a Contact and an ArrayList of Messages(message, initator).
+			  To make things more interesting, we also add the option to receive a message from an existing Contact
 		SMSApp.PrivateChat methods:
 			- Constructor: It demands to receive a Contact (and nothing else)
 			- addMessage:
