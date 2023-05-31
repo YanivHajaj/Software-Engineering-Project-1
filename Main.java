@@ -334,7 +334,7 @@ public class Main {
 			//Existing chat
 			for (PrivateChat curr_privateChat : all_chats) 
 			{
-				if (curr_privateChat.getContact().equals(contact_name))
+				if (curr_privateChat.getContact().equals(my_contact.GetName()))
 				{
 					chat = curr_privateChat;
 					break;
