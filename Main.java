@@ -360,7 +360,7 @@ public class Main {
 			System.out.println(chat);
 			break;
 		case "5":
-			System.out.println("Please insert what sentence you want to find:");
+			System.out.println("Type a sentence:");
 			String sentence = input.nextLine();//get sentence
 			//System.out.println(chats.printContactsbysentence(sentence));
 			chats.printContact(sentence);
