@@ -9,7 +9,7 @@ public class SMSApp
 	{
 		all_chats = new ArrayList<PrivateChat>();
 	}
-	public boolean isEmpty() { //return true if data is empty
+	public boolean isEmpty() { 
 		if(all_chats.isEmpty())
 			return true;
 		else
@@ -19,14 +19,12 @@ public class SMSApp
 		if(!all_chats.isEmpty()) {
 			Iterator<PrivateChat> it = all_chats.iterator();
 			while (it.hasNext()) {
-				PrivateChat i = it.next();
-				System.out.println(i);
+				PrivateChat next = it.next();
+				System.out.println(next);
 			}
 			System.out.print("\n");
 		}
-		else {
-			System.out.println("The Chat list is empty");
-		}
+		else {System.out.println("There are no chats");}
 	}
 	public void printContact(String sentence) { 
 		boolean foundAtLeastOne=false;
