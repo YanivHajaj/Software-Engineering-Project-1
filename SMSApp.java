@@ -29,7 +29,7 @@ public class SMSApp
 	public void printContact(String sentence) { 
 		boolean foundAtLeastOne=false;
     	for(PrivateChat chat:all_chats) {
-    		boolean found=chat.getMesseges(sentence);
+    		boolean found=chat.printSpecificContacts(sentence);
     		if (found) {foundAtLeastOne=true;}
 		}
     	if (foundAtLeastOne==false) {

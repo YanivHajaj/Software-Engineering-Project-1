@@ -42,7 +42,7 @@ public class PrivateChat
 		return str;
 	}
 	
-	public boolean getMesseges(String sentence){
+	public boolean printSpecificContacts(String sentence){
 		boolean found =false;
 		for(Message msg:_chat) {
     		if (msg.GetText().contains(sentence)) {
