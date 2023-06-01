@@ -32,7 +32,7 @@ READ ME:
 			- addMessage:
 			- getContact:
 			- toString:
-			
+			- printSpecificContacts: It prints the name of all the contacts that have the requested sentence. 
 			
 	- MediaApp:
 	
