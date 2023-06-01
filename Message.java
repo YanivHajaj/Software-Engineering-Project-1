@@ -16,7 +16,7 @@ public class Message
 		this._message = message;
 		this._initiator = initiator;
 	}
-	
+	public String GetText(){return _message;}
 	
 	@Override
 	public String toString() 

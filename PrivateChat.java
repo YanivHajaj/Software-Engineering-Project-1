@@ -41,4 +41,16 @@ public class PrivateChat
 		}
 		return str;
 	}
+	
+	public boolean printMessages(String sentence){
+		boolean found =false;
+		for(Message msg:_chat) {
+    		if (msg.GetText().contains(sentence)) {
+    			System.out.println(_contact.GetName());
+    			found =true;
+    			break;
+			}
+		}
+		return found;
+	}
 }
