@@ -1,5 +1,6 @@
 
-import java.util.Date;
+//import java.util.Date;
+import java.time.LocalDateTime;
 
 //inherits from day
 public class Event extends Day {
@@ -7,7 +8,7 @@ public class Event extends Day {
 
 		
 		// Constructors
-		public Event(Date date, int duration, String descr) {
+		public Event(LocalDateTime date, int duration, String descr) {
 			super(date, duration);
 			this.description = descr;
 		}
@@ -34,11 +35,11 @@ public class Event extends Day {
 			this.description = s;
 		}
 		
-		public Date getDate() {
+		public LocalDateTime getDate() {
 			return super.getDate();
 		}
 		
-		public void setDate(Date d) {
+		public void setDate(LocalDateTime d) {
 			super.setDate(d);
 		}
 		

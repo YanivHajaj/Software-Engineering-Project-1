@@ -14,7 +14,7 @@ public class Main {
 	static Phonebook my_phonebook = new Phonebook(); // Init phonebook
 	static MediaApp m1 = new MediaApp(); // Init MediaApp
 	static SMSApp chats = new SMSApp(); // Init SMSApp
-	// static Diary my_diary = new Diary(); // Init DiaryApp
+	static Diary my_diary = new Diary(); // Init DiaryApp
 	
 	
 	public static void main (String[] args) {
@@ -31,7 +31,24 @@ public class Main {
 		Phonebook.addContactFromMain(my_phonebook.phonebook, "shlomo", "4443333");
 		Phonebook.addContactFromMain(my_phonebook.phonebook, "shlomo", "4443333"); 
 		Phonebook.addContactFromMain(my_phonebook.phonebook, "shlomo", "4443333");
+		
+		// add some Event/Meeting to the Diary (can be deleted)
+		my_diary.AddEventFromMain(my_phonebook, "event num 1", 2, 20, 30, 0);
+		my_diary.AddEventFromMain(my_phonebook, "event num 3", 2, 3, 30, 0);
+		my_diary.AddEventFromMain(my_phonebook, "event num 4", 2, 4, 30, 0);
+		my_diary.AddEventFromMain(my_phonebook, "event num 5", 2, 5, 30, 0);		
+		my_diary.AddMeetingFromMain(my_phonebook, "David",5,7,56,57);
+		my_diary.AddMeetingFromMain(my_phonebook, "Shlomo",8,7,56,57);
+		//my_diary.AddMeetingFromMain(my_phonebook, "David",2,2,65,57);//Error day 8
+		my_diary.AddMeetingFromMain(my_phonebook, "David",2,2,32,57);		
+		my_diary.AddMeetingFromMain(my_phonebook, "David",3,4,35,56);
+		my_diary.AddMeetingFromMain(my_phonebook, "Shlomo",4,5,33,53);
+		my_diary.AddMeetingFromMain(my_phonebook, "David",1,1,48,27);
+		my_diary.AddMeetingFromMain(my_phonebook, "David",1,1,53,53);
+		my_diary.AddMeetingFromMain(my_phonebook, "David",1,1,53,57);
 
+		
+		
 		
 		while (!exit) {
 			boolean exitPhonebook = false;
@@ -62,13 +79,15 @@ public class Main {
 				exit_loop = false;
 				break;
 				
+			
 			case "3":
 				input.nextLine(); // clean input buffer
 				while (!exit_loop) 
 				{
-					//main_calendar(my_phonebook.phonebook, my_diary);
+					main_calendar(my_phonebook, my_diary);
 				}
 				exit_loop = false;
+				break;
 			case "4":
 				while (!exitPhonebook) {
 					
@@ -122,7 +141,7 @@ public class Main {
 
 			}
 		}
-		input.close();
+		//input.close();
 	}
 
 	public static void main_phonebook(ArrayList<Contact> phonebook)
@@ -369,24 +388,75 @@ public class Main {
 	} // end of main_sms function
 	
 	
-	public static void main_calendar(ArrayList<Contact> phonebook) //, Diary my_diary)
+	public static void main_calendar(Phonebook phonebook,Diary my_diary) //, Diary my_diary)
 	{
+		
 		System.out.println("Calender:");
 		System.out.println("Type the number of one of the following instructions to excute it:");
-		System.out.println("1) Add an event");
+		System.out.println("1) Add an event/meeting");
 		System.out.println("2) Delete an event");
 		System.out.println("3) Display all events from a specific date");
 		System.out.println("4) Display all events with a specific contact");
 		System.out.println("5) search if there is overlapping events (delete if there is)");
 		System.out.println("6) Display all events");
-		System.out.println("7) Back to main menu)");
+		System.out.println("7) Back to main menu");
+		
 		String Num1 = input.next();
+		
 		switch (Num1) 
 		{
 		case "1":
-			Phonebook.addContactFromUser(my_phonebook.phonebook);
+			System.out.println("press 1 to add event, press 2 to add meeting(with contact)");
+			String eventOrMeeting = input.next();
+			//~~~~~~~~~~~~~~~~~~~~~ he choose 1 now choose event Or Meeting
+			switch (eventOrMeeting) 
+			{
+				case "1":
+					my_diary.AddEvent(phonebook);
+					break;
+				case "2":
+					my_diary.AddMeeting(phonebook);
+					break;	
+	
+				default:
+					System.out.println("Invalid input return to main");
+					break;
+			} // end of switch case
 			break;
+			//~~~~~~~~~~~~~~~~~~~~~ he choose 1 now choose event Or Meeting
+//		case "2":
+//			System.out.println("Going back to main App");
+//			exit_loop = true;
+//			break;
+			
+		case "2":
+			my_diary.RemoveDay();
+			break;		
+			
+		case "3":
+			System.out.println("~~~~~ all the events in specific day: ~~~~~");
+			my_diary.PrintOneDay();
+			System.out.println("~~~~~ all the events in specific day: ~~~~~");
+			break;	
+			
+		case "4":
+			System.out.println("~~~~~ all the meetings with contact: ~~~~~");
+			my_diary.PrintOneContact(phonebook);
+			System.out.println("~~~~~ all the meetings with contact: ~~~~~");
+			break;	
 		
+		case "5":
+			System.out.println("~~~~~ chcek for ovelap and delete(if exist): ~~~~~");
+			my_diary.DeleteCollidingEvents();
+			System.out.println("~~~~~ chcek for ovelap and delete(if exist): ~~~~~");
+			break;	
+			
+		case "6":
+			System.out.println("~~~~~ all the events in the Diary: ~~~~~");
+			my_diary.PrintDiaryBook();
+			System.out.println("~~~~~ all the events in the Diary: ~~~~~");
+			break;		
+			
 		case "7":
 			System.out.println("Going back to main App");
 			exit_loop = true;

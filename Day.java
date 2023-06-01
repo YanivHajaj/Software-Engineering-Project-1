@@ -1,24 +1,25 @@
 
+import java.time.LocalDateTime;
 import java.util.Comparator;
-import java.util.Date;
+//import java.util.Date;
 
 //an abstract class for meetings and events- inheritance
 public abstract class Day {
 
-	private Date date;
+	private LocalDateTime date;
 	private int duration;
 	
 	// Constructors
-	public Day(Date date, int duration) {
+	public Day(LocalDateTime date2, int duration) {
 		
-		this.date = date;
+		this.date = date2;
 		this.duration = duration;
 		
 	}	
 	
 //default constructor						
 	public Day() {
-		this.date = new Date(0,0,0);
+		this.date = LocalDateTime.of(2023, 1, 0, 0, 0);
 		this.duration = 0;
 	}
 	
@@ -29,11 +30,11 @@ public abstract class Day {
 	}
 	
 	// Getters & Setters
-	public Date getDate() {
+	public LocalDateTime getDate() {
 		return this.date;
 	}
 	
-	public void setDate(Date date) {
+	public void setDate(LocalDateTime date) {
 		this.date = date;
 	}
 	

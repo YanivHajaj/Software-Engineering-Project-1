@@ -1,11 +1,11 @@
 
-import java.util.Date;
+import java.time.LocalDateTime;
 //inherits from day
 public class Meeting extends Day {
 		private Contact contact;//the contact i want to meet
 
 		// Constructors
-		public Meeting(Date date, int duration, Contact con) {
+		public Meeting(LocalDateTime date, int duration, Contact con) {
 			super(date, duration);
 			this.contact = con;
 		}
@@ -31,11 +31,11 @@ public class Meeting extends Day {
 			this.contact = c;
 		}
 		
-		public Date getDate() {
+		public LocalDateTime getDate() {
 			return super.getDate();
 		}
 		
-		public void setDate(Date d) {
+		public void setDate(LocalDateTime d) {
 			super.setDate(d);
 		}
 		
@@ -56,8 +56,10 @@ public class Meeting extends Day {
 		
 		public void printDay() {
 			super.printDay();
-			System.out.print("contact:");
+			System.out.println("contact:");
 			this.getContact().PrintContact();
+			System.out.println("\n");
+
 			
 		}
 		
