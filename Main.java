@@ -361,8 +361,7 @@ public class Main {
 			break;
 		case "5":
 			System.out.println("Type a sentence:");
-			String sentence = input.nextLine();//get sentence
-			//System.out.println(chats.printContactsbysentence(sentence));
+			String sentence = input.nextLine();
 			chats.printContact(sentence);
 			break;
 		case "6":	
