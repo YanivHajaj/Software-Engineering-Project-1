@@ -363,10 +363,10 @@ public class Main {
 			System.out.println("Please insert what sentence you want to find:");
 			String sentence = input.nextLine();//get sentence
 			//System.out.println(chats.printContactsbysentence(sentence));
-			chats.printContactsbysentence(sentence);
+			chats.printContact(sentence);
 			break;
 		case "6":	
-			chats.printAllChats();
+			chats.displayAll();
 			break;
 		
 

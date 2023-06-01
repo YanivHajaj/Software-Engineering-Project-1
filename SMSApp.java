@@ -15,7 +15,7 @@ public class SMSApp
 		else
 			return false;
 	}
-	public void printAllChats() { 
+	public void displayAll() { 
 		if(!all_chats.isEmpty()) {
 			Iterator<PrivateChat> it = all_chats.iterator();
 			while (it.hasNext()) {
@@ -28,10 +28,10 @@ public class SMSApp
 			System.out.println("The Chat list is empty");
 		}
 	}
-	public void printContactsbysentence(String sentence) { 
+	public void printContact(String sentence) { 
 		boolean foundAtLeastOne=false;
     	for(PrivateChat chat:all_chats) {
-    		boolean found=chat.printMessages(sentence);
+    		boolean found=chat.getMesseges(sentence);
     		if (found) {foundAtLeastOne=true;}
 		}
     	if (foundAtLeastOne==false) {
