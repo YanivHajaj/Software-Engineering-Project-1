@@ -359,12 +359,12 @@ public class Main {
 			}
 			System.out.println(chat);
 			break;
-		case "5":
+		case "5": //printing contacts who have chats with a specific sentence
 			System.out.println("Type a sentence:");
 			String sentence = input.nextLine();
 			chats.searchContact(sentence);
 			break;
-		case "6":	
+		case "6": //print all messages from all chats	
 			chats.displayAll();
 			break;
 		case "7":
