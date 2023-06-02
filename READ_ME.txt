@@ -27,12 +27,17 @@ READ ME:
 			  it contains an ArrayList of PrivateChat, 
 			  which contains a Contact and an ArrayList of Messages(message, initator).
 			  To make things more interesting, we also add the option to receive a message from an existing Contact
+		SMSApp methods:
+			- searchContact: This function checks if at least one contact with the sentence was found. It prints the contact if it hase the sentence. 
+			- displayAll: Print all messages from all chats
 		SMSApp.PrivateChat methods:
 			- Constructor: It demands to receive a Contact (and nothing else)
 			- addMessage:
 			- getContact:
 			- toString:
-			
+			- printSpecificContacts: It prints the name of all the contacts that have the requested string sentence. 
+		SMSApp.PrivateChat.Message methods:
+			- GetText: Returns the string text messages that was passed from user to user.
 			
 	- MediaApp:
 	

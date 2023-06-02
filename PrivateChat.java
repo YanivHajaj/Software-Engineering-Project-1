@@ -41,4 +41,17 @@ public class PrivateChat
 		}
 		return str;
 	}
+	
+	//this function gets a sentence from the user and prints all the contacts with this sentence
+	public boolean printSpecificContacts(String sentence){
+		boolean found =false;
+		for(Message msg:_chat) {
+    		if (msg.GetText().contains(sentence)) {
+    			System.out.println(_contact.GetName());
+    			found =true;
+    			break;
+			}
+		}
+		return found;
+	}
 }

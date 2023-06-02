@@ -220,7 +220,7 @@ public class Main {
 		System.out.println("2) Receive SMS from contact");
 		System.out.println("3) Delete chat with contact");
 		System.out.println("4) Display all messages with specific contact");
-		System.out.println("5) Search a specific messege in all chats");
+		System.out.println("5) Search for a contact with a specific sentence");
 		System.out.println("6) Display all chat messanges");
 		System.out.println("7) Back to main menu)");
 		
@@ -374,7 +374,14 @@ public class Main {
 			}
 			System.out.println(chat);
 			break;
-			
+		case "5": //printing contacts who have chats with a specific sentence
+			System.out.println("Type a sentence:");
+			String sentence = input.nextLine();
+			chats.searchContact(sentence);
+			break;
+		case "6": //print all messages from all chats	
+			chats.displayAll();
+			break;
 		case "7":
 			System.out.println("Going back to main App");
 			exit_loop = true;
