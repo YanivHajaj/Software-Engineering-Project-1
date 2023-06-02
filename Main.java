@@ -453,9 +453,9 @@ public class Main {
 			break;	
 		
 		case "5":
-			System.out.println("~~~~~ chcek for ovelap and delete(if exist): ~~~~~");
+			System.out.println("~~~~~ check for overlap and delete(if exist): ~~~~~");
 			my_diary.DeleteCollidingEvents();
-			System.out.println("~~~~~ chcek for ovelap and delete(if exist): ~~~~~");
+			System.out.println("~~~~~ check for overlap and delete(if exist): ~~~~~");
 			break;	
 			
 		case "6":

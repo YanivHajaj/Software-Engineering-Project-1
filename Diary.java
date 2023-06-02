@@ -65,9 +65,9 @@ public class Diary {
         
         int hour;
         do {
-            System.out.println("Write hour of new meeting: (between 1-23)");
+            System.out.println("Write hour of new meeting: (between 0-23)");
             hour = s.nextInt();
-        } while (hour < 1 || hour > 23);
+        } while (hour < 0 || hour > 23);
         
         int minutes;
         do {
@@ -81,7 +81,7 @@ public class Diary {
         // scan duration   
         int duration;
         do {
-            System.out.println("Write minutes of new meeting: (between 1-60)");
+            System.out.println("Write duration of new meeting: (between 1-60 minutes)");
             duration = s.nextInt();
         } while (duration < 1 || duration > 60);
         
@@ -110,19 +110,19 @@ public class Diary {
         // scan date
         int day;
         do {
-            System.out.println("Write day of new meeting (between 1-30):");
+            System.out.println("Write day of new Event (between 1-30):");
             day = s.nextInt();
         } while (day < 1 || day > 30);
         
         int hour;
         do {
-            System.out.println("Write hour of new meeting: (between 1-23)");
+            System.out.println("Write hour of new Event: (between 0-23)");
             hour = s.nextInt();
-        } while (hour < 1 || hour > 23);
+        } while (hour < 0 || hour > 23);
         
         int minutes;
         do {
-            System.out.println("Write minutes of new meeting: (between 0-59)");
+            System.out.println("Write minutes of new Event: (between 0-59)");
             minutes = s.nextInt();
         } while (minutes < 0 || minutes > 59);
         LocalDateTime date = LocalDateTime.of(startDate.getYear(), startDate.getMonthValue(), day, hour, minutes);
@@ -130,7 +130,7 @@ public class Diary {
         // scan duration   
         int duration;
         do {
-            System.out.println("Write duration of new meeting: (between 1-60)");
+            System.out.println("Write duration of new Event: (between 1-60)");
             duration = s.nextInt();
         } while (duration < 1 || duration > 60);
 
@@ -165,9 +165,9 @@ public class Diary {
         
         int hour;
         do {
-            System.out.println("Write hour of new meeting: (between 1-23)");
+            System.out.println("Write hour of new meeting: (between 0-23)");
             hour = s.nextInt();
-        } while (hour < 1 || hour > 23);
+        } while (hour < 0 || hour > 23);
         
         int minutes;
         do {
