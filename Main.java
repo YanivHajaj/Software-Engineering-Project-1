@@ -362,15 +362,11 @@ public class Main {
 		case "5":
 			System.out.println("Type a sentence:");
 			String sentence = input.nextLine();
-			chats.printContact(sentence);
+			chats.searchContact(sentence);
 			break;
 		case "6":	
 			chats.displayAll();
 			break;
-		
-
-			
-			
 		case "7":
 			System.out.println("Going back to main App");
 			exit_loop = true;

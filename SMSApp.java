@@ -9,14 +9,11 @@ public class SMSApp
 	{
 		all_chats = new ArrayList<PrivateChat>();
 	}
-	public boolean isEmpty() { 
-		if(all_chats.isEmpty())
-			return true;
-		else
-			return false;
-	}
-	public void displayAll() { 
-		if(!all_chats.isEmpty()) {
+	public void displayAll() { //Print all messages from all chats
+		if(all_chats.isEmpty()) {
+			System.out.println("There are no chats");
+		}
+		else { //there are chats to be printed
 			Iterator<PrivateChat> it = all_chats.iterator();
 			while (it.hasNext()) {
 				PrivateChat next = it.next();
@@ -24,9 +21,8 @@ public class SMSApp
 			}
 			System.out.print("\n");
 		}
-		else {System.out.println("There are no chats");}
 	}
-	public void printContact(String sentence) { 
+	public void searchContact(String sentence) { //this function checks if at least one contact with the sentence was found. 
 		boolean foundAtLeastOne=false;
     	for(PrivateChat chat:all_chats) {
     		boolean found=chat.printSpecificContacts(sentence);
