@@ -270,7 +270,7 @@ public class Diary {
             int day = diary.get(i).getDate().getDayOfMonth();
             int minutes = diary.get(i).getDate().getMinute() + diary.get(i).getDuration();
             int hour=0;//check if the duration plus minutes exeed the 60 min
-            if(minutes>60)
+            if(minutes>59)
             {
                 hour = diary.get(i).getDate().getHour()+1;
                 minutes=minutes-60;

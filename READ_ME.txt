@@ -49,6 +49,23 @@ READ ME:
 				
 				
 		
-	- CalendarApp:
-	
-		
+	- CalendarApp (Diary):	
+		The Diary class represents a calendar or diary functionality. It manages a collection of events and meetings, stored in an ArrayList of Day objects.
+		The diary keeps track of dates and allows the user to add, remove, and display events and meetings.	
+		Constructor:
+		Diary(): Initializes a new instance of the Diary class. It creates an empty ArrayList to store the diary entries and sets the start date to January 1, 2023, by default.
+		Attributes:
+			ArrayList that holds the days of the diary, day can be either events or meetings.
+			startDate: A LocalDateTime object representing the start date of the diary. By default, it is set to January 1, 2023.
+		Methods:				
+			AddMeeting(Phonebook phonebook) //Allows the user to add a meeting, enter the name of the meeting contact date, time, and duration,to add the meeting to the diary.		
+			AddMeetingFromMain(Phonebook phonebook, String name, int day, int hour, int minutes, int duration) //same as above (for our check)
+			AddEvent(Phonebook phonebook)// similar to AddMeeting ,Adds an event to the diary
+			AddEventFromMain(Phonebook phonebook, String description, int day, int hour, int minutes, int duration) //same as above (for our check)			
+			PrintOneDay() //Allows the user to print all the events and meetings for a specific day.
+			PrintOneContact(Phonebook phonebook) //Allows the user to print all the meetings for a specific contact.
+			DeleteCollidingEvents()//Removes any events or meetings that collide with each other in the diary. 
+			PrintDiaryBook() // Prints all the events and meetings in the diary.
+			
+			*note that The Day class is an abstract class that serves as a base class for both Event and Meeting. 
+			It contains common properties and methods related to a day, such as date and duration.

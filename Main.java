@@ -32,6 +32,7 @@ public class Main {
 		Phonebook.addContactFromMain(my_phonebook.phonebook, "shlomo", "4443333"); 
 		Phonebook.addContactFromMain(my_phonebook.phonebook, "shlomo", "4443333");
 		
+		
 		// add some Event/Meeting to the Diary (can be deleted)
 		my_diary.AddEventFromMain(my_phonebook, "event num 1", 2, 20, 30, 0);
 		my_diary.AddEventFromMain(my_phonebook, "event num 3", 2, 3, 30, 0);
@@ -46,7 +47,7 @@ public class Main {
 		my_diary.AddMeetingFromMain(my_phonebook, "David",1,1,48,27);
 		my_diary.AddMeetingFromMain(my_phonebook, "David",1,1,53,53);
 		my_diary.AddMeetingFromMain(my_phonebook, "David",1,1,53,57);
-
+		
 		
 		
 		
@@ -401,11 +402,11 @@ public class Main {
 		System.out.println("Calender:");
 		System.out.println("Type the number of one of the following instructions to excute it:");
 		System.out.println("1) Add an event/meeting");
-		System.out.println("2) Delete an event");
-		System.out.println("3) Display all events from a specific date");
-		System.out.println("4) Display all events with a specific contact");
-		System.out.println("5) search if there is overlapping events (delete if there is)");
-		System.out.println("6) Display all events");
+		System.out.println("2) Delete an event/meeting");
+		System.out.println("3) Display all events/meetings from a specific date");
+		System.out.println("4) Display all meetings with a specific contact");
+		System.out.println("5) search if there is overlapping events/meetings (delete if there is)");
+		System.out.println("6) Display all events/meetings");
 		System.out.println("7) Back to main menu");
 		
 		String Num1 = input.next();
@@ -459,9 +460,9 @@ public class Main {
 			break;	
 			
 		case "6":
-			System.out.println("~~~~~ all the events in the Diary: ~~~~~");
+			System.out.println("~~~~~ all the events/meetings in the Diary: ~~~~~");
 			my_diary.PrintDiaryBook();
-			System.out.println("~~~~~ all the events in the Diary: ~~~~~");
+			System.out.println("~~~~~ all the events/meetings in the Diary: ~~~~~");
 			break;		
 			
 		case "7":
