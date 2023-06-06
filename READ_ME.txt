@@ -39,8 +39,16 @@ READ ME:
 		SMSApp.PrivateChat.Message methods:
 			- GetText: Returns the string text messages that was passed from user to user.
 			
-	- MediaApp:
-	
+	- MediaApp: The App contains 2 different types of media which both are taken as inputs by the user.
+				The media is stored in a vector collection for more efficient data storage.
+				Each media is an abstract class divided in to 2 of the following types: Song,Video.
+			Methods:
+				addMedia: adds a media of one of two types: video or song. both have time (min:sec) and name.
+				playByName:takes name of media, plays it
+				playAllMedia:plays all media at once (if done serially then it would take long time)	
+				
+				
+		
 	- CalendarApp:
 	
 		
