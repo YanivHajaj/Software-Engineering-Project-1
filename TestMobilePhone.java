@@ -78,9 +78,9 @@ public class TestMobilePhone {
 
 		//Testing case 3:
 		PrivateChat cont2del = null;
-		for (PrivateChat curr_privateChat : testPhone.chats.all_chats) 
+		for (PrivateChat curr_privateChat : testPhone.chats.all_chats)
 			{
-				if (curr_privateChat.getContact().toLowerCase(null).equals("Batman".toLowerCase(null)))
+				if (curr_privateChat.getContact().equals("Batman"))
 				{
 					cont2del = curr_privateChat;
 					break;
@@ -95,9 +95,9 @@ public class TestMobilePhone {
 		//Testing case 4:
 		System.out.print("\n");
 		PrivateChat chat2print = null;
-		for (PrivateChat curr_privateChat : testPhone.chats.all_chats) 
+		for (PrivateChat curr_privateChat : testPhone.chats.all_chats)
 			{
-				if (curr_privateChat.getContact().toLowerCase().equals("Robin".toLowerCase()))
+				if (curr_privateChat.getContact().equals("Robin"))
 				{
 					chat2print = curr_privateChat;
 					break;
