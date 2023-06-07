@@ -73,6 +73,41 @@ public class TestMobilePhone {
 		System.out.print("\n");
 		testPhone.chats.addNewMessege(testPhone.my_phonebook.phonebook,testPhone.my_phonebook,"Superman","You give me hope.");
 		System.out.print("\n");
+
+
+
+		//Testing case 3:
+		PrivateChat cont2del = null;
+		for (PrivateChat curr_privateChat : testPhone.chats.all_chats) 
+			{
+				if (curr_privateChat.getContact().toLowerCase(null).equals("Batman".toLowerCase(null)))
+				{
+					cont2del = curr_privateChat;
+					break;
+				}
+			}
+		testPhone.chats.all_chats.remove(cont2del);
+		System.out.print("\n");
+		
+
+
+
+		//Testing case 4:
+		System.out.print("\n");
+		PrivateChat chat2print = null;
+		for (PrivateChat curr_privateChat : testPhone.chats.all_chats) 
+			{
+				if (curr_privateChat.getContact().toLowerCase().equals("Robin".toLowerCase()))
+				{
+					chat2print = curr_privateChat;
+					break;
+				}
+			}
+		System.out.println(chat2print);
+		System.out.print("\n");
+
+
+
 		//Testing case 5:
 		System.out.print("The word 'You' was used in the chats with: ");
 		System.out.print("\n");
