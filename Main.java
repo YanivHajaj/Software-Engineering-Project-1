@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner; //to get input from user
 //GROUP 13: SAMY, SHAIEL, YANIV, ILYA, ORI, TOMER
@@ -150,7 +149,7 @@ public class Main {
 			System.out.println("4) Search contact by name (return ArrayList that contains the occurrences)");
 			System.out.println("5) Sort all contacts by name");
 			System.out.println("6) Sort all contacts by number");
-			System.out.println("7) Delete duplicates");
+			// System.out.println("7) Delete duplicates");
 			System.out.println("7) Reverse the order of the phonebook");
 			System.out.println("8) Save phonebook as a text file");
 			System.out.println("9) Load contacts from a text file");
@@ -168,7 +167,7 @@ public class Main {
 				Phonebook.printAllContact(phonebook);
 				break;
 			case "4":
-				Phonebook.findNameOccurrences(phonebook);	
+				Phonebook.findNameOccurrences(phonebook);
 				break;
 			case "5":
 				Phonebook.sortListByName(phonebook);
