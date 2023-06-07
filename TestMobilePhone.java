@@ -97,7 +97,7 @@ public class TestMobilePhone {
 		PrivateChat chat2print = null;
 		for (PrivateChat curr_privateChat : testPhone.chats.all_chats)
 			{
-				if (curr_privateChat.getContact().equals("Robin"))
+				if (curr_privateChat.getContact().equals("Superman"))
 				{
 					chat2print = curr_privateChat;
 					break;
