@@ -23,28 +23,25 @@ public class Phonebook {
 	}
 	
 	//1)
-	public static void addContactFromUser(ArrayList<Contact> phonebook) {
+	public static void addContactFromUser(ArrayList<Contact> phonebook, String name, String number) {
 	    
-	    System.out.print("Enter name of the contact: \n");
-	    String name = input.nextLine();
 	    if (findContact(phonebook, name)!= null)
 	    {
 	    	System.out.print("Existing Contact \nReturning to menu...");
 	    	return;
 	    }
-	    System.out.print("Enter phone number of the contact: \n");
-	    String number = input.nextLine();
+	    
 	    Contact newContact = new Contact();
 	    newContact.SetName(name);
 	    newContact.SetNumber(number);	    
 	    phonebook.add(newContact);
+	    System.out.print("The contact was added.");
 	}
 	
 	
 	//2)
-	public static void DeleteContact(ArrayList<Contact> phonebook, ArrayList<PrivateChat> all_chats) {
-	  System.out.print("Enter name of the contact you want to delete: ");
-	  String Name = input.nextLine();
+	public static void DeleteContact(ArrayList<Contact> phonebook, ArrayList<PrivateChat> all_chats, String Name) {
+	  
 	  int index=0;
 	  try {
 		  for (Contact cont : phonebook) {
@@ -68,6 +65,7 @@ public class Phonebook {
 		  
 		  all_chats.remove(chat);
 		  phonebook.remove(index);
+		  System.out.print("The contact was deleted.");
 	  }
 	  catch (IndexOutOfBoundsException e) {
 		  System.out.println("We weren't able to remove the contact because it wasn't on your phoneook.");

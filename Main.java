@@ -21,27 +21,7 @@ public class Main {
 		
 		boolean exit = false;
 
-		// add some contacts to the phonebook (can be deleted)
-		Phonebook.addContactFromMain(my_phonebook.phonebook, "moahe", "1111234");
-		Phonebook.addContactFromMain(my_phonebook.phonebook, "david", "2225678");
-		Phonebook.addContactFromMain(my_phonebook.phonebook, "shlomo", "4443333");
-		Phonebook.addContactFromMain(my_phonebook.phonebook, "avraham", "3331234");
 		
-		
-		// add some Event/Meeting to the Diary (can be deleted)
-		my_diary.AddEventFromMain(my_phonebook, "event num 1", 2, 20, 30, 0);
-		my_diary.AddEventFromMain(my_phonebook, "event num 3", 2, 3, 30, 0);
-		my_diary.AddEventFromMain(my_phonebook, "event num 4", 2, 4, 30, 0);
-		my_diary.AddEventFromMain(my_phonebook, "event num 5", 2, 5, 30, 0);		
-		my_diary.AddMeetingFromMain(my_phonebook, "David",5,7,56,57);
-		my_diary.AddMeetingFromMain(my_phonebook, "Shlomo",8,7,56,57);
-		//my_diary.AddMeetingFromMain(my_phonebook, "David",2,2,65,57);//Error day 8
-		my_diary.AddMeetingFromMain(my_phonebook, "David",2,2,32,57);		
-		my_diary.AddMeetingFromMain(my_phonebook, "David",3,4,35,56);
-		my_diary.AddMeetingFromMain(my_phonebook, "Shlomo",4,5,33,53);
-		my_diary.AddMeetingFromMain(my_phonebook, "David",1,1,48,27);
-		my_diary.AddMeetingFromMain(my_phonebook, "David",1,1,53,53);
-		my_diary.AddMeetingFromMain(my_phonebook, "David",1,1,53,57);
 		
 		
 		
@@ -158,10 +138,18 @@ public class Main {
 			String Num1 = input.next();
 			switch (Num1) {
 			case "1":
-				Phonebook.addContactFromUser(phonebook);
+				input.nextLine();
+				System.out.print("Enter name of the contact: \n");
+			    String name = input.nextLine();
+				System.out.print("Enter phone number of the contact: \n");
+			    String number = input.next();
+			    Phonebook.addContactFromUser(phonebook,name, number);
 				break;
 			case "2":	
-				Phonebook.DeleteContact(phonebook, chats.all_chats);
+				input.nextLine();
+				System.out.print("Enter name of the contact you want to delete: ");
+				String Name = input.nextLine();
+				Phonebook.DeleteContact(phonebook, chats.all_chats,Name);
 				break;
 				
 			case "3":
