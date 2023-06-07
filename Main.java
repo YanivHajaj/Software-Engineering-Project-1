@@ -26,11 +26,6 @@ public class Main {
 		Phonebook.addContactFromMain(my_phonebook.phonebook, "david", "2225678");
 		Phonebook.addContactFromMain(my_phonebook.phonebook, "shlomo", "4443333");
 		Phonebook.addContactFromMain(my_phonebook.phonebook, "avraham", "3331234");
-		Phonebook.addContactFromMain(my_phonebook.phonebook, "shlomo", "4441111");
-		Phonebook.addContactFromMain(my_phonebook.phonebook, "shlomo", "4442222");
-		Phonebook.addContactFromMain(my_phonebook.phonebook, "shlomo", "4443333");
-		Phonebook.addContactFromMain(my_phonebook.phonebook, "shlomo", "4443333"); 
-		Phonebook.addContactFromMain(my_phonebook.phonebook, "shlomo", "4443333");
 		
 		
 		// add some Event/Meeting to the Diary (can be deleted)
