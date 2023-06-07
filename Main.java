@@ -156,10 +156,10 @@ public class Main {
 			System.out.println("5) Sort all contacts by name");
 			System.out.println("6) Sort all contacts by number");
 			System.out.println("7) Delete duplicates");
-			System.out.println("8) Reverse the order of the phonebook");
-			System.out.println("9) Save phonebook as a text file");
-			System.out.println("10) Load contacts from a text file");
-			System.out.println("11) Back to main menu");
+			System.out.println("7) Reverse the order of the phonebook");
+			System.out.println("8) Save phonebook as a text file");
+			System.out.println("9) Load contacts from a text file");
+			System.out.println("10) Back to main menu");
 			String Num1 = input.next();
 			switch (Num1) {
 			case "1":
@@ -181,20 +181,20 @@ public class Main {
 			case "6":
 				Phonebook.sortListByNumber(phonebook);
 				break;
+//			case "7":
+//				Phonebook.deleteDuplicatenew(phonebook);
+//				break;
 			case "7":
-				Phonebook.deleteDuplicatenew(phonebook);
-				break;
-			case "8":
 				Phonebook.reverseOrder(phonebook);
 				System.out.println("The order was reversed.");
 				break;
-			case "9":
+			case "8":
 				Phonebook.saveToTextFile(phonebook);
 				break;
-			case "10":
+			case "9":
 				Phonebook.addFromFile(phonebook);
 				break;
-			case "11":
+			case "10":
 				System.out.println("Going back to main App");
 				exit_loop = true;
 				return;
