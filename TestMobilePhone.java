@@ -62,8 +62,26 @@ public class TestMobilePhone {
 		//SMS test
 		//Contact my_contact = testPhone.my_phonebook.findContact(testPhone.my_phonebook.phonebook, "Batman");
 		System.out.print("<<<<<<<<<<<<<<<<<Testing SMS>>>>>>>>>>>>>>>>>");
+		System.out.print("<<<<<<<<<<<<<<<<<Testing SMS>>>>>>>>>>>>>>>>>");
+		//Testing case 1:
 		System.out.print("\n");
-		testPhone.chats.searchContact("name");
+		testPhone.chats.addNewMessege(testPhone.my_phonebook.phonebook,testPhone.my_phonebook,"Batman","You are my hero!");
+		System.out.print("\n");
+		testPhone.chats.addNewMessege(testPhone.my_phonebook.phonebook,testPhone.my_phonebook,"Robin","You are batman's son?");
+		System.out.print("\n");
+		testPhone.chats.addNewMessege(testPhone.my_phonebook.phonebook,testPhone.my_phonebook,"Batman","Thanks for saving me");
+		System.out.print("\n");
+		testPhone.chats.addNewMessege(testPhone.my_phonebook.phonebook,testPhone.my_phonebook,"Superman","You give me hope.");
+		System.out.print("\n");
+		//Testing case 5:
+		System.out.print("The word 'You' was used in the chats with: ");
+		System.out.print("\n");
+		testPhone.chats.searchContact("You");
+		System.out.print("\n");
+		System.out.print("The word 'give' was used in the chats with: ");
+		System.out.print("\n");
+		//Testing case 6:
+		testPhone.chats.searchContact("give");
 		System.out.print("\n");
 		testPhone.chats.displayAll();
 		

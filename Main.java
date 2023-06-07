@@ -216,42 +216,10 @@ public class Main {
 		case "1": // Send SMS to contact
 			System.out.println("Type contact name: ");
 			contact_name = input.nextLine();
-			
-			my_contact = Phonebook.findContact(phonebook, contact_name);
-			
-			//Contact doesnt exist
-			if (my_contact == null)
-			{
-				System.out.println("Unavailable contact name");
-				break;
-			}
-			
-			//New chat 
-			//if (all_chats.contains(my_contact)== false)
-			if (my_contact.has_chat_get() == false)
-			{
-				my_contact.contact_new_chat();
-				System.out.println("New Private Chat with " + my_contact.GetName());
-				PrivateChat new_chat = new PrivateChat(my_contact);
-				System.out.println("New Message to " + my_contact.GetName());
-				curr_message = input.nextLine();
-				new_chat.addMessage(curr_message, Message.SENT);
-				all_chats.add(new_chat);
-				break;
-			}
-			
-			//Existing chat
-			for (PrivateChat curr_privateChat : all_chats) 
-			{
-				if (curr_privateChat.getContact().equals(contact_name))
-				{
-					chat = curr_privateChat;
-					break;
-				}
-			}
-			System.out.println("New Message to " + my_contact.GetName());
+			System.out.println("Type the new Message: ");
 			curr_message = input.nextLine();
-			chat.addMessage(curr_message, Message.SENT);
+			chats.addNewMessege(phonebook,my_phonebook,contact_name,curr_message);
+			
 			break;
 		
 			
