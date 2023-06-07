@@ -67,6 +67,21 @@ public class TestMobilePhone {
 		System.out.print("\n");
 		testPhone.chats.displayAll();
 		
+		
+		//Media tests
+		System.out.println("<<<<<<<<<<<<<<<<<Testing Media>>>>>>>>>>>>>>>>>");
+		//MediaApp m1 = new MediaApp(); // Init MediaApp
+
+		Video v1 = new Video("movie1","5:30");
+		Audio a1 = new Audio("song1","1:20");
+		Audio a2 = new Audio("song2","10:15");
+
+		testPhone.m1.addMedia(v1);
+		testPhone.m1.addMedia(a1);
+		testPhone.m1.addMedia(a2);
+		testPhone.m1.playByName("song1");
+		testPhone.m1.playAllMedia();
+
 		//Fill here more tests
 		
 	}

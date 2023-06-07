@@ -3,11 +3,13 @@ public abstract class Media {
 	protected String name;
 	protected String time;
 	
+	// Constructors
+		
 	public Media(String name,String time) {
 		setName(name);
 		setTime(time);
-		
 	}
+	
 	public final void setName(String _name) {
 		this.name = _name;
 		
