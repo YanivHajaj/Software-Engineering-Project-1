@@ -27,7 +27,12 @@ public class Phonebook {
 	    
 	    System.out.print("Enter name of the contact: \n");
 	    String name = input.nextLine();
-	     System.out.print("Enter phone number of the contact: \n");
+	    if (findContact(phonebook, name)!= null)
+	    {
+	    	System.out.print("Existing Contact \nReturning to menu...");
+	    	return;
+	    }
+	    System.out.print("Enter phone number of the contact: \n");
 	    String number = input.nextLine();
 	    Contact newContact = new Contact();
 	    newContact.SetName(name);
@@ -37,18 +42,32 @@ public class Phonebook {
 	
 	
 	//2)
-	public static void DeleteContact(ArrayList<Contact> phonebook) {
-	  System.out.print("Enter name of the contact you wnat to delte: ");
+	public static void DeleteContact(ArrayList<Contact> phonebook, ArrayList<PrivateChat> all_chats) {
+	  System.out.print("Enter name of the contact you want to delete: ");
 	  String Name = input.nextLine();
 	  int index=0;
 	  try {
-      for (Contact cont : phonebook) {
-          if (cont.GetName().compareTo(Name)==0) {
-              break;
-          }
-          index=index+1;
-      }
-      phonebook.remove(index);
+		  for (Contact cont : phonebook) {
+			  if (cont.GetName().toLowerCase().compareTo(Name.toLowerCase())==0) 
+		          {
+		        	  break;
+		          }
+	          index=index+1;
+			  }
+		  
+		  // delete Private chat
+		  PrivateChat chat = null;
+		  for (PrivateChat curr_privateChat : all_chats) 
+			{
+				if (curr_privateChat.getContact().toLowerCase().equals(Name.toLowerCase()))
+				{
+					chat = curr_privateChat;
+					break;
+				}
+			}
+		  
+		  all_chats.remove(chat);
+		  phonebook.remove(index);
 	  }
 	  catch (IndexOutOfBoundsException e) {
 		  System.out.println("We weren't able to remove the contact because it wasn't on your phoneook.");

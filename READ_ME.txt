@@ -11,7 +11,7 @@ READ ME:
 			- Constructor :
 			- addContactFromMain : 
 			- addContactFromUser :
-			- DeleteContact :
+			- DeleteContact : Deletes the Contact and all the chat with it
 			- printAllContact :
 			- findNameOccurrences :
 			- findContact : This was changed to return the first contact with the searched name (this was a needed change for the sms app)

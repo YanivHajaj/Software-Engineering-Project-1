@@ -7,14 +7,14 @@ import java.util.Scanner; //to get input from user
 
 public class Main {
 	
-	static Scanner input = new Scanner(System.in); //Create a Scanner object
-	static boolean exit_loop = false;	// Create exit flag
+	public static Scanner input = new Scanner(System.in); //Create a Scanner object
+	public static boolean exit_loop = false;	// Create exit flag
 
 	// Init Apps
-	static Phonebook my_phonebook = new Phonebook(); // Init phonebook
-	static MediaApp m1 = new MediaApp(); // Init MediaApp
-	static SMSApp chats = new SMSApp(); // Init SMSApp
-	static Diary my_diary = new Diary(); // Init DiaryApp
+	public static Phonebook my_phonebook = new Phonebook(); // Init phonebook
+	public static MediaApp m1 = new MediaApp(); // Init MediaApp
+	public static SMSApp chats = new SMSApp(); // Init SMSApp
+	public static Diary my_diary = new Diary(); // Init DiaryApp
 	
 	
 	public static void main (String[] args) {
@@ -166,8 +166,9 @@ public class Main {
 				Phonebook.addContactFromUser(phonebook);
 				break;
 			case "2":	
-				Phonebook.DeleteContact(phonebook);
+				Phonebook.DeleteContact(phonebook, chats.all_chats);
 				break;
+				
 			case "3":
 				Phonebook.printAllContact(phonebook);
 				break;
