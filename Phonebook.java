@@ -42,7 +42,7 @@ public class Phonebook {
 	
 	
 	//2)
-	public static void DeleteContact(ArrayList<Contact> phonebook, ArrayList<PrivateChat> all_chats) {
+	public static void DeleteContact(ArrayList<Contact> phonebook, ArrayList<PrivateChat> all_chats,Diary my_diary) {
 	  System.out.print("Enter name of the contact you want to delete: ");
 	  String Name = input.nextLine();
 	  int index=0;
@@ -67,6 +67,7 @@ public class Phonebook {
 			}
 		  
 		  all_chats.remove(chat);
+		  my_diary.RemoveContact(Name);
 		  phonebook.remove(index);
 	  }
 	  catch (IndexOutOfBoundsException e) {

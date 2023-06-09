@@ -160,7 +160,8 @@ public class Main {
 				Phonebook.addContactFromUser(phonebook);
 				break;
 			case "2":	
-				Phonebook.DeleteContact(phonebook, chats.all_chats);
+				//Phonebook.DeleteContact(phonebook, chats.all_chats, my_diary);
+				Phonebook.DeleteContact(phonebook, chats.all_chats, my_diary);
 				break;
 				
 			case "3":
