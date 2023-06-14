@@ -4,10 +4,12 @@ public class TestMobilePhone {
 		Main testPhone = new Main();
 	// add some contacts to the phonebook (can be deleted)
 		testPhone.my_phonebook.printAllContact(testPhone.my_phonebook.phonebook);
-		testPhone.my_phonebook.addContactFromMain(testPhone.my_phonebook.phonebook, "moshe", "1111234");
-		testPhone.my_phonebook.addContactFromMain(testPhone.my_phonebook.phonebook, "david", "2225678");
-		testPhone.my_phonebook.addContactFromMain(testPhone.my_phonebook.phonebook, "shlomo", "4443333");
-		testPhone.my_phonebook.addContactFromMain(testPhone.my_phonebook.phonebook, "avraham", "3331234");
+		testPhone.my_phonebook.addContactFromMain(testPhone.my_phonebook.phonebook, "moshe", "0111123411");
+		testPhone.my_phonebook.addContactFromMain(testPhone.my_phonebook.phonebook, "david", "0225555678");
+		testPhone.my_phonebook.addContactFromMain(testPhone.my_phonebook.phonebook, "shlomo", "0444663333");
+		testPhone.my_phonebook.addContactFromMain(testPhone.my_phonebook.phonebook, "jacob", "01333123406");
+		testPhone.my_phonebook.addContactFromMain(testPhone.my_phonebook.phonebook, "jacob", "013331aa23");
+		testPhone.my_phonebook.addContactFromMain(testPhone.my_phonebook.phonebook, "avraham", "0133312340");
 			
 			
 			// add some Event/Meeting to the Diary (can be deleted)
