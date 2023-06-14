@@ -101,6 +101,52 @@ public class Main {
 				break;
 			case "5":
 				System.out.println("printing everything from every app:");
+
+				System.out.println("phonebook:");
+				System.out.println("Type the number of one of the following instructions to excute it:");
+				System.out.println("1) Add contact");
+				System.out.println("2) Delete contact");
+				System.out.println("3) Display all contacts");
+				System.out.println("4) Search contact by name (return ArrayList that contains the occurrences)");
+				System.out.println("5) Sort all contacts by name");
+				System.out.println("6) Sort all contacts by number");
+				System.out.println("7) Reverse the order of the phonebook");
+				System.out.println("8) Save phonebook as a text file");
+				System.out.println("9) Load contacts from a text file");
+
+
+
+				System.out.println("SMS:");
+				System.out.println("Type the number of one of the following instructions to excute it:");
+				System.out.println("1) Send SMS to contact");
+				System.out.println("2) Receive SMS from contact");
+				System.out.println("3) Delete chat with contact");
+				System.out.println("4) Display all messages with specific contact");
+				System.out.println("5) Search for a contact with a specific sentence");
+				System.out.println("6) Display all chat messanges");
+
+				
+				System.out.println("Calender:");
+				System.out.println("Type the number of one of the following instructions to excute it:");
+				System.out.println("1) Add an event/meeting");
+				System.out.println("2) Delete an event/meeting");
+				System.out.println("3) Display all events/meetings from a specific date");
+				System.out.println("4) Display all meetings with a specific contact");
+				System.out.println("5) search if there is overlapping events/meetings (delete if there is)");
+				System.out.println("6) Display all events/meetings");
+
+
+
+				System.out.println("Media:");
+				System.out.println("Type the number of one of the following instructions to excute it:");
+				System.out.println("1) Add a media");
+				System.out.println("2) Play a media");
+				System.out.println("3) Play all medias");
+
+
+				System.out.println("Exiting. We will not take a new input");
+
+
 				exit= true;
 				break;
 					

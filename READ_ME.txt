@@ -32,9 +32,9 @@ READ ME:
 			- displayAll: Print all messages from all chats
 		SMSApp.PrivateChat methods:
 			- Constructor: It demands to receive a Contact (and nothing else)
-			- addMessage:
-			- getContact:
-			- toString:
+			- addMessage: adds message to chat
+			- getContact: find contact of the chat
+			- toString: return the string equivalent of the chat
 			- printSpecificContacts: It prints the name of all the contacts that have the requested string sentence. 
 		SMSApp.PrivateChat.Message methods:
 			- GetText: Returns the string text messages that was passed from user to user.
