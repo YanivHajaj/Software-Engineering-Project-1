@@ -4,7 +4,7 @@ import java.util.Iterator;
 public class SMSApp 
 {
 	ArrayList<PrivateChat> all_chats; 
-	
+	PrivateChat chat = new PrivateChat(null);
 	public SMSApp() 
 	{
 		all_chats = new ArrayList<PrivateChat>();
@@ -32,4 +32,43 @@ public class SMSApp
     	System.out.print("Sentence not found.");
     	}
     }
+	
+	
+	
+	public void addNewMessege(ArrayList<Contact> phonebook,Phonebook Phonebook, String contact_name, String curr_message) {
+		Contact my_contact = Phonebook.findContact(phonebook, contact_name);
+		//Contact doesnt exist
+		if (my_contact == null)
+		{
+			System.out.println("Unavailable contact name");
+			//break;
+			return;
+		}
+		
+		//New chat 
+		//if (all_chats.contains(my_contact)== false)
+		if (my_contact.has_chat_get() == false)
+		{
+			my_contact = Phonebook.findContact(phonebook, contact_name);
+			my_contact.contact_new_chat();
+			System.out.println("New Private Chat with " + my_contact.GetName());
+			PrivateChat new_chat = new PrivateChat(my_contact);
+			System.out.println("New Message to " + my_contact.GetName());
+			new_chat.addMessage(curr_message, Message.SENT);
+			all_chats.add(new_chat);
+			//break;
+			return;
+		}
+		
+		//Existing chat
+		for (PrivateChat curr_privateChat : all_chats) 
+		{
+			if (curr_privateChat.getContact().equals(contact_name))
+			{
+				chat = curr_privateChat;
+				break;
+			}
+		}
+		chat.addMessage(curr_message, Message.SENT);
+	}
 }

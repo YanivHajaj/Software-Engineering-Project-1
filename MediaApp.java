@@ -7,6 +7,7 @@ import java.util.Vector;
 public class MediaApp {
 	//all media is in a vector array so we can extend it to more media later dynamically
 	Vector<Media> mediaArray = new Vector<>();
+	
 	//function is used later to check if time is of min:sec format private so no outside access
 	private boolean validateTime(String time) {
 		String[] parts = time.split(":");
@@ -52,6 +53,22 @@ public class MediaApp {
 			System.out.println("not found");
 		}
 	}
+	
+	public void playByName(String name) {
+		int flag = 0;
+		//search one by one in vector of media
+		for (int i = 0; i < mediaArray.size(); i++) {
+			if(mediaArray.get(i).getName().compareTo(name)==0) {
+				System.out.println(mediaArray.get(i));
+				flag = 1;
+				break;
+			}
+		}
+		if(flag == 0) {
+			System.out.println("not found");
+		}
+	}
+	
 	public void addMedia() {
 		Scanner input = new Scanner(System.in);
 		System.out.print("enter 1 for song 2 for Video \n");
@@ -99,10 +116,16 @@ public class MediaApp {
 			}
 			
 		}
+		
 		catch(InputMismatchException e){
 			System.out.print("input not correct try again\n");
 		}
 	}
+	
+	public void addMedia(Media m1) {
+		mediaArray.add(m1);
+	}
+	
 	public void Testfunc() {
 		System.out.print(mediaArray);
 		

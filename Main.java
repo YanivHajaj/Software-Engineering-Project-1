@@ -20,27 +20,7 @@ public class Main {
 		
 		boolean exit = false;
 
-		// add some contacts to the phonebook (can be deleted)
-		Phonebook.addContactFromMain(my_phonebook.phonebook, "moahe", "1111234");
-		Phonebook.addContactFromMain(my_phonebook.phonebook, "david", "2225678");
-		Phonebook.addContactFromMain(my_phonebook.phonebook, "shlomo", "4443333");
-		Phonebook.addContactFromMain(my_phonebook.phonebook, "avraham", "3331234");
 		
-		
-		// add some Event/Meeting to the Diary (can be deleted)
-		my_diary.AddEventFromMain(my_phonebook, "event num 1", 2, 20, 30, 0);
-		my_diary.AddEventFromMain(my_phonebook, "event num 3", 2, 3, 30, 0);
-		my_diary.AddEventFromMain(my_phonebook, "event num 4", 2, 4, 30, 0);
-		my_diary.AddEventFromMain(my_phonebook, "event num 5", 2, 5, 30, 0);		
-		my_diary.AddMeetingFromMain(my_phonebook, "David",5,7,56,57);
-		my_diary.AddMeetingFromMain(my_phonebook, "Shlomo",8,7,56,57);
-		//my_diary.AddMeetingFromMain(my_phonebook, "David",2,2,65,57);//Error day 8
-		my_diary.AddMeetingFromMain(my_phonebook, "David",2,2,32,57);		
-		my_diary.AddMeetingFromMain(my_phonebook, "David",3,4,35,56);
-		my_diary.AddMeetingFromMain(my_phonebook, "Shlomo",4,5,33,53);
-		my_diary.AddMeetingFromMain(my_phonebook, "David",1,1,48,27);
-		my_diary.AddMeetingFromMain(my_phonebook, "David",1,1,53,53);
-		my_diary.AddMeetingFromMain(my_phonebook, "David",1,1,53,57);
 		
 		
 		
@@ -157,7 +137,12 @@ public class Main {
 			String Num1 = input.next();
 			switch (Num1) {
 			case "1":
-				Phonebook.addContactFromUser(phonebook);
+				input.nextLine();
+				System.out.print("Enter name of the contact: \n");
+			    String name = input.nextLine();
+				System.out.print("Enter phone number of the contact: \n");
+			    String number = input.next();
+			    Phonebook.addContactFromUser(phonebook,name, number);
 				break;
 			case "2":	
 				//Phonebook.DeleteContact(phonebook, chats.all_chats, my_diary);
@@ -228,42 +213,10 @@ public class Main {
 		case "1": // Send SMS to contact
 			System.out.println("Type contact name: ");
 			contact_name = input.nextLine();
-			
-			my_contact = Phonebook.findContact(phonebook, contact_name);
-			
-			//Contact doesnt exist
-			if (my_contact == null)
-			{
-				System.out.println("Unavailable contact name");
-				break;
-			}
-			
-			//New chat 
-			//if (all_chats.contains(my_contact)== false)
-			if (my_contact.has_chat_get() == false)
-			{
-				my_contact.contact_new_chat();
-				System.out.println("New Private Chat with " + my_contact.GetName());
-				PrivateChat new_chat = new PrivateChat(my_contact);
-				System.out.println("New Message to " + my_contact.GetName());
-				curr_message = input.nextLine();
-				new_chat.addMessage(curr_message, Message.SENT);
-				all_chats.add(new_chat);
-				break;
-			}
-			
-			//Existing chat
-			for (PrivateChat curr_privateChat : all_chats) 
-			{
-				if (curr_privateChat.getContact().equals(contact_name))
-				{
-					chat = curr_privateChat;
-					break;
-				}
-			}
-			System.out.println("New Message to " + my_contact.GetName());
+			System.out.println("Type the new Message: ");
 			curr_message = input.nextLine();
-			chat.addMessage(curr_message, Message.SENT);
+			chats.addNewMessege(phonebook,my_phonebook,contact_name,curr_message);
+			
 			break;
 		
 			

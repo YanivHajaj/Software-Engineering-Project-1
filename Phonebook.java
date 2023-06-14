@@ -1,5 +1,9 @@
 //package pack1;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner; //to get input from user
 //GROUP 13: SAMY, SHAIEL, YANIV, ILYA, ORI, TOMER
@@ -23,21 +27,19 @@ public class Phonebook {
 	}
 	
 	//1)
-	public static void addContactFromUser(ArrayList<Contact> phonebook) {
+	public static void addContactFromUser(ArrayList<Contact> phonebook, String name, String number) {
 	    
-	    System.out.print("Enter name of the contact: \n");
-	    String name = input.nextLine();
 	    if (findContact(phonebook, name)!= null)
 	    {
 	    	System.out.print("Existing Contact \nReturning to menu...");
 	    	return;
 	    }
-	    System.out.print("Enter phone number of the contact: \n");
-	    String number = input.nextLine();
+	    
 	    Contact newContact = new Contact();
 	    newContact.SetName(name);
 	    newContact.SetNumber(number);	    
 	    phonebook.add(newContact);
+	    System.out.print("The contact was added.");
 	}
 	
 	
@@ -69,6 +71,7 @@ public class Phonebook {
 		  all_chats.remove(chat);
 		  my_diary.RemoveContact(Name);
 		  phonebook.remove(index);
+		  System.out.print("The contact was deleted.");
 	  }
 	  catch (IndexOutOfBoundsException e) {
 		  System.out.println("We weren't able to remove the contact because it wasn't on your phoneook.");
