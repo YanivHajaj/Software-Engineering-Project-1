@@ -36,6 +36,10 @@ public class TestMobilePhone {
 		System.out.print("\n");
 		testPhone.my_phonebook.addContactFromUser(testPhone.my_phonebook.phonebook,"Flash", "058199997777777");
 		System.out.print("\n");
+		testPhone.my_phonebook.DeleteContact(testPhone.my_phonebook.phonebook, testPhone.chats.all_chats,"moshe");
+		System.out.print("\n");
+		testPhone.my_phonebook.DeleteContact(testPhone.my_phonebook.phonebook, testPhone.chats.all_chats,"IronMan");
+		System.out.print("\n");
 		
 		testPhone.my_phonebook.printAllContact(testPhone.my_phonebook.phonebook);
 		System.out.print("\n");
