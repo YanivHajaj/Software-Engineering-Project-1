@@ -30,12 +30,14 @@ public class MediaApp {
 	    return true;
 	}
 	
+	//playing all the medias from the vector MediArray
 	public void playAllMedia() {
 		for (int i = 0; i < mediaArray.size(); i++) {
 			System.out.println(mediaArray.get(i));
 		}
 	}
 	
+	//play a specific media after asking for name.  
 	public void playByName() {
 		System.out.print("enter media name to play \n");
 		Scanner input = new Scanner(System.in);
@@ -54,6 +56,7 @@ public class MediaApp {
 		}
 	}
 	
+	//another use for play by name but with name as an argument. 
 	public void playByName(String name) {
 		int flag = 0;
 		//search one by one in vector of media
@@ -69,9 +72,11 @@ public class MediaApp {
 		}
 	}
 	
+	//get strings from the user, name and time and create a new media. 
 	public void addMedia() {
 		Scanner input = new Scanner(System.in);
 		System.out.print("enter 1 for song 2 for Video \n");
+		//create audio or video depends on users choice
 		try {
 			int Num2 = input.nextInt();
 			
@@ -93,7 +98,6 @@ public class MediaApp {
 				
 			}	else if(Num2 == 2) {
 				//Video case
-				//Audio case
 				String name;
 				String time;
 				System.out.print("enter name \n");
@@ -123,7 +127,12 @@ public class MediaApp {
 	}
 	
 	public void addMedia(Media m1) {
-		mediaArray.add(m1);
+		if (validateTime(m1.time)) {//check if valid format
+			mediaArray.add(m1);
+        } else {
+            System.out.println("Invalid format");
+        }
+
 	}
 	
 	public void Testfunc() {

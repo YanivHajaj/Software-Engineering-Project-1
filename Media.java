@@ -1,4 +1,5 @@
-
+//an abstract class which contains name and time, 
+//two new classes - video and audio will extends from it   
 public abstract class Media {
 	protected String name;
 	protected String time;
